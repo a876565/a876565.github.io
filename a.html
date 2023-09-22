@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.6.1.min.js"></script>
+    <link href="bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mingke</title>
+    <script src="bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <table class="table table-hover table-bordered" id="ky_book_table">
+    <tbody>
+        <tr id="ky_book">
+            <td>Book</td>
+        </tr>
+    </tbody>
+    </table>
+    
+    <table class="table table-hover table-bordered" id="ky_table">
+    <thead>
+        <tr id="ky_types">
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="ky_stone">
+            <td>Stone</td>
+        </tr>
+        <tr id="ky_amulet">
+            <td>Amulet</td>
+        </tr>
+        <tr id="ky_earring1">
+            <td>Earring1</td>
+        </tr>
+        <tr id="ky_earring2">
+            <td>Earring2</td>
+        </tr>
+        <tr id="ky_ring1">
+            <td>Ring1</td>
+        </tr>
+        <tr id="ky_ring2">
+            <td>Ring2</td>
+        </tr>
+    </tbody>
+    </table>
+    
+    <table class="table table-hover table-bordered" id="ky_result">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Points</th>
+            <th>Level</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+<script lang="javascript">
+const KY_LIST=["K1","K2","K3","K4","K5","K6"]
+const KY_NEG_LIST=["N1","N2","N3","N4"]
+const MAX_KY_NUM=5;
+const KY_NEG_ID=MAX_KY_NUM;
+var ky_types=[]
+var ky_values={}
+
+function n_points(n){
+    s=""
+    for (let i=0;i<n;i++)
+    {
+        s+="●";
+        if (i%5==4)
+        {
+            s+=" ";
+        }
+    }
+    return s;
+}
+function add_ky_point(ktype,kval)
+{
+    if (kval>0)
+    {
+        if (ktype in ky_values)
+        {
+            ky_values[ktype]+=kval;
+        }
+        else
+        {
+            ky_values[ktype]=kval;
+        }
+    }
+}
+
+function get_ky_name(ktype)
+{
+    if (ktype>=0)
+    {
+        return KY_LIST[ktype];
+    }
+    else
+    {
+        return KY_NEG_LIST[-ktype-1];
+    }
+}
+function update_ky()
+{
+    ky_types=[]
+    ky_values={}
+    
+    for (i=0;i<MAX_KY_NUM;i++)
+    {
+        ky_sel=$("#ky_types #ky_select_"+i)
+        ky_types.push(parseInt(ky_sel.val()))
+    }
+    
+    collect_ky=function(vid){
+        var count=0;
+        for (i=0;i<MAX_KY_NUM+1;i++)
+        {
+            kval=parseInt($("#"+vid+" #ky_select_"+i).val());
+            if (i!=KY_NEG_ID)
+            {
+                ktype=ky_types[i];
+                if (kval>0)
+                {
+                    if (count<2)
+                    {
+                        $("#"+vid+" td:nth("+(i+1)+")").attr("style","background-color:#10B310");
+                        count+=1;
+                    }
+                    else
+                    {
+                        $("#"+vid+" td:nth("+(i+1)+")").attr("style","background-color:#F61000");
+                    }
+                }
+                else
+                {
+                        $("#"+vid+" td:nth("+(i+1)+")").attr("style","");
+                }
+            }
+            else
+            {
+                ktype=-1-parseInt($("#"+vid+" #ky_select_n"+KY_NEG_ID).val());
+            }
+            add_ky_point(ktype,kval);
+        }
+    };
+    
+    for (let i=0;i<2;i++)
+    {
+        var ktype=parseInt($("#ky_book #ky_select_t"+i).val())
+        var kval=parseInt($("#ky_book #ky_select_"+i).val())
+        add_ky_point(ktype,kval);
+    }
+    collect_ky("ky_stone");
+    collect_ky("ky_amulet");
+    collect_ky("ky_earring1");
+    collect_ky("ky_earring2");
+    collect_ky("ky_ring1");
+    collect_ky("ky_ring2");
+    
+    $("#ky_result tbody").empty()
+    for (let i in ky_values)
+    {
+        var kpoints=Math.min(ky_values[i],15);
+        var klevel=Math.min(Math.floor(ky_values[i]/5),3);
+        var ky_res_td="<tr>";
+        ky_res_td+="<td>"+get_ky_name(i)+"</td>";
+        ky_res_td+="<td>"+n_points(kpoints)+"("+ky_values[i]+")"+"</td>";
+        ky_res_td+="<td>"+klevel+"</td>";
+        ky_res_td+="</tr>";
+        $("#ky_result tbody").append(ky_res_td)
+    }
+    console.log(ky_types)
+    console.log(ky_values)
+}
+function gen_select_list(sels,id)
+{
+    s="<select class=\"form-select-sm\" id=\"ky_select_"+id+"\" onchange=\"update_ky()\">"
+    for (i in sels)
+    {
+        if (Number.isInteger(sels[i]))
+        {
+        s+="<option value=\""+sels[i]+"\" >"+sels[i]+"</option>";
+        }
+        else
+        {
+        s+="<option value=\""+i+"\" >"+sels[i]+"</option>";
+        }
+    }
+    s+="</select>"
+    return s;
+}
+function ky_type_list(id){
+    return "<th>"+gen_select_list(KY_LIST,id)+"</th>";
+};
+function ky_neg_list(id,n=3){
+    var level_list=Array.from({length:n+1},(x,i)=>i);
+    return "<td>"+gen_select_list(KY_NEG_LIST,"n"+id)+gen_select_list(level_list,id)+"</th>";
+};
+function ky_level_list(id,n=5){
+    var level_list=Array.from({length:n+1},(x,i)=>i);
+    return "<td>"+gen_select_list(level_list,id)+"</th>";
+};
+function ky_book_list(id){
+    return "<td>"+gen_select_list(KY_LIST,"t"+id)+"</td>"+
+        "<td>"+gen_select_list([0,3,6,9,12],id)+"</td>";
+};
+
+
+$(document).ready(function(){
+
+    for (ki=0;ki<MAX_KY_NUM;ki++)
+    {
+        $("#ky_table thead tr").append(ky_type_list(ki));
+    }
+    $("#ky_table thead tr").append("Neg");
+    
+    //书
+    $("#ky_book").append(ky_book_list(0));
+    $("#ky_book").append(ky_book_list(1));
+    //石头
+    for (ki=0;ki<MAX_KY_NUM+1;ki++)
+    {
+        if (ki==MAX_KY_NUM)
+        {
+            $("#ky_table tbody tr:first").append(ky_neg_list(ki,10));
+        }
+        else
+        {
+            $("#ky_table tbody tr:first").append(ky_level_list(ki,10));
+        }
+    }
+    
+    //装备
+    for (ki=0;ki<MAX_KY_NUM+1;ki++)
+    {
+        if (ki==MAX_KY_NUM)
+        {
+            $("#ky_table tbody tr:gt(0)").append(ky_neg_list(ki));
+        }
+        else
+        {
+            $("#ky_table tbody tr:gt(0)").append(ky_level_list(ki));
+        }
+    }
+});
+</script>
+</body>
+</html>
