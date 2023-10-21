@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.6.1.min.js"></script>
+    <link href="bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Fenshen</title>
+    <script src="bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+	.mycircle {
+		background: lightblue;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		position:absolute;
+		top:25%;
+		left:25%;
+		display: flex;
+		justify-content: center;
+		justify-items: center;
+	}
+	.infoblock {
+		background: lightblue;
+		width: 100px;
+		height: 100px;
+		position:absolute;
+		top:200px;
+		left:200px;
+		display: flex;
+		align-items: center;
+	}
+    </style>
+</head>
+
+<body>
+<select class="form-select-sm" onchange="set_mode()" id="mode_sel">
+<option value="fenshen" >分身</option>
+<option value="jian" >剑</option>
+ </select>
+ 
+ <button onclick="show_answer()">
+ 显示答案
+ </button>
+<div id="disp" style="width: 500px;height: 500px;position:fixed;margin:auto auto;left:0;right:0;top:0;bottom:0;">
+<div class="mycircle" id="c1"></div>
+<div class="mycircle" id="c2"></div>
+<div class="mycircle" id="c3"></div>
+<div class="mycircle" id="c4"></div>
+<div class="mycircle" id="c5"></div>
+<div class="mycircle" id="c6"></div>
+<div class="mycircle" id="c7"></div>
+<div class="mycircle" id="c8"></div>
+<div class="infoblock" id="cinfo"></div>
+</div>
+
+<script lang="javascript">
+const DIRECTIONS=[
+	[50,0],  //top
+	[86,14], //top_right
+	[100,50], //right
+	[86,86], //bottom_right
+	[50,100], //bottom
+	[14,86], //bottom_left
+	[0,50], //left
+	[14,14], //top_left
+	];
+	
+const fenshen=[
+	[7,8,7,6,4,2],
+	[5,6,1,8,6,5,3],
+	[4,8,7,6,4,3],
+	[8,1,8,7,5,3],
+	[3,8,6,4,3,2],
+	[2,1,8,5,3,2],
+	[1,1,8,7,4,3],
+	[4,8,6,5,4,3]
+];
+const jian=[
+	[1,1,2,5,6],
+	[8,2,4,6,8],
+	[5,2,4,5,7],
+	[4,1,2,4,7],
+	[4,1,2,4,5],
+	[3,7,1,3,5,7],
+	[2,6,2,4,6,7]
+];
+
+var current_mode=0;
+var current_state=0;
+var current_answer=0;
+var current_variant=0;
+
+function randint(min_num,max_num){
+	return parseInt(min_num+Math.random()*(max_num-min_num),10);
+}
+
+function show_state()
+{
+	$(".mycircle").css("color","black").hide();
+	for (var i in current_state)
+	{
+		$("#c"+current_state[i]).show();
+	}
+}
+
+function show_answer()
+{
+	for (var i in current_answer)
+	{
+		$("#c"+current_answer[i]).css("color","red");
+	}
+}
+
+function set_mode()
+{
+	if ($("#mode_sel").val()=="fenshen")
+	{
+		current_mode=0;
+	}
+	else
+	{
+		current_mode=1;
+	}
+}
+$(document).ready(function(){
+	var mycircles=$(".mycircle");
+	for (var i=0;i<8;i++)
+	{
+		mycircles[i].style.top=DIRECTIONS[i][0]*500/100-50+"px";
+		mycircles[i].style.left=DIRECTIONS[i][1]*500/100-50+"px";
+		mycircles[i].innerHTML="<p style=\"text-align: center;\">"+(i+1)+"</p>";
+		
+	}
+	$("#cinfo").text("info");
+	
+	mycircles.hover(function(){
+		this.style.background="lightgreen";
+	},
+	function(){
+		this.style.background="lightblue";
+	});
+	
+	mycircles.click(function(){
+		//$("#cinfo").text("You clicked "+this.id);
+		var n=parseInt(this.id[1]);
+		if (current_answer.includes(n))
+		{
+			$("#cinfo").text("Success!");
+		}
+		else
+		{
+			$("#cinfo").text("Failed!");
+		}
+		show_answer();
+	});
+	
+	
+	$("#cinfo").text("Click to start");
+	$("#cinfo").click(function(){
+		if (current_mode==0)
+		{
+			s=fenshen[randint(0,8)];
+			current_answer=s.slice(0,s.length-5);
+			current_state=s.slice(s.length-5)
+			current_variant=randint(0,current_answer.length)
+		}
+		else
+		{
+			s=jian[parseInt(Math.random()*7)];
+			current_answer=s.slice(0,s.length-4);
+			current_state=s.slice(s.length-4)
+			current_variant=randint(0,current_answer.length)
+		}
+		
+		$("#cinfo").text("Select");
+		show_state();
+	});
+});
+</script>
+</body>
+</html>
