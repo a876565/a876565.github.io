@@ -43,6 +43,8 @@
  <button onclick="show_answer()">
  显示答案
  </button>
+ <p id="score_info">
+ </p>
 <div id="disp" style="width: 500px;height: 500px;position:fixed;margin:auto auto;left:0;right:0;top:0;bottom:0;">
 <div class="mycircle" id="c1"></div>
 <div class="mycircle" id="c2"></div>
@@ -91,6 +93,12 @@ var current_mode=0;
 var current_state=0;
 var current_answer=0;
 var current_variant=0;
+var current_index=-1;
+var succ_num=0;
+var fail_num=0;
+var total_time=0;
+var begin_time=0;
+var has_started=0;
 
 function randint(min_num,max_num){
 	return parseInt(min_num+Math.random()*(max_num-min_num),10);
@@ -124,6 +132,24 @@ function set_mode()
 		current_mode=1;
 	}
 }
+
+function show_score()
+{
+	$("#score_info").text("成功率:"+succ_num+"/"+(succ_num+fail_num)+
+						"("+(100*succ_num/(succ_num+fail_num)).toFixed(2)+"%)"
+						+"平均时间(成功)："+(total_time/succ_num/1000).toFixed(3)+"s"
+						);
+}
+
+function new_index(old_val,min_val,max_val)
+{
+	var s=randint(min_val,max_val);
+	while (s==old_val)
+	{
+		s=randint(min_val,max_val);
+	}
+	return s;
+}
 $(document).ready(function(){
 	var mycircles=$(".mycircle");
 	for (var i=0;i<8;i++)
@@ -144,31 +170,44 @@ $(document).ready(function(){
 	
 	mycircles.click(function(){
 		//$("#cinfo").text("You clicked "+this.id);
-		var n=parseInt(this.id[1]);
-		if (current_answer.includes(n))
+		if (has_started==1)
 		{
-			$("#cinfo").text("Success!");
+			has_started=0;
+			var n=parseInt(this.id[1]);
+			if (current_answer.includes(n))
+			{
+				$("#cinfo").text("Success!");
+				total_time+=(new Date()).valueOf()-begin_time;
+				succ_num+=1;
+			}
+			else
+			{
+				$("#cinfo").text("Failed!");
+				fail_num+=1;
+			}
+			show_answer();
+			show_score();
 		}
-		else
-		{
-			$("#cinfo").text("Failed!");
-		}
-		show_answer();
 	});
 	
 	
 	$("#cinfo").text("Click to start");
 	$("#cinfo").click(function(){
+		var s;
 		if (current_mode==0)
 		{
-			s=fenshen[randint(0,8)];
+			current_index=new_index(current_index,0,8);
+			s=fenshen[current_index];
+			
+			current_index=s;
 			current_answer=s.slice(0,s.length-5);
 			current_state=s.slice(s.length-5)
 			current_variant=randint(0,current_answer.length)
 		}
 		else
 		{
-			s=jian[parseInt(Math.random()*7)];
+			current_index=new_index(current_index,0,7);
+			s=jian[current_index];
 			current_answer=s.slice(0,s.length-4);
 			current_state=s.slice(s.length-4)
 			current_variant=randint(0,current_answer.length)
@@ -176,7 +215,10 @@ $(document).ready(function(){
 		
 		$("#cinfo").text("Select");
 		show_state();
+		begin_time=(new Date()).valueOf();
+		has_started=1;
 	});
+		show_score();
 });
 </script>
 </body>
