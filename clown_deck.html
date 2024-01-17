@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-3.6.1.min.js"></script>
+<link href="bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<title>🤡发牌</title>
+
+<body>
+<table class="table table-striped table-hover table-border">
+    <tr>
+        <td>
+            <p>color</p>
+        </td>
+        <td>
+            <p>Card</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-primary btn-lg" onclick="color_click(0)" id="btn_color_0">红色</button>
+            <button class="btn btn-default btn-lg" onclick="color_click(1)" id="btn_color_1">黑色</button>
+        </td>
+        <td>
+            <button class="btn btn-primary btn-lg" onclick="card_click(0)" id="btn_card_0">♥红桃</button>
+            <button class="btn btn-default btn-lg" onclick="card_click(1)" id="btn_card_1">♦方片</button>
+            <button class="btn btn-default btn-lg" onclick="card_click(2)" id="btn_card_2">♠黑桃</button>
+            <button class="btn btn-default btn-lg" onclick="card_click(3)" id="btn_card_3">♣梅花</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p class="fs-1" id="result_text">Test</p>
+        </td>
+    </tr>
+</table>
+    
+</body>
+
+<script>
+    var cur_color=0;
+    var cur_card=0;
+
+    function set_btns(id_prefix,num,cur)
+    {
+        for (i=0;i<num;i++)
+        {
+            var a=$(id_prefix+i);
+            a.removeClass("btn-primary btn-default");
+            if (i==cur)
+            {
+                a.addClass("btn-primary");
+            }
+            else{
+                a.addClass("btn-default");
+            }
+        }
+    }
+    function show_result(color,card){
+        var prison=0;
+        var order=[];
+        var text=[
+            "♥红桃",
+            "♦方片",
+            "♠黑桃",
+            "♣梅花"
+        ];
+        console.log("color="+color+",card="+card)
+        if (color==0)
+        {
+            //红色
+            switch (card)
+            {
+                case 0:
+                    prison=3;
+                    order=[0,1,2,3];
+                    break;
+                case 1:
+                    prison=3;
+                    order=[1,0,3,2];
+                    break;
+                case 2:
+                    prison=1;
+                    order=[0,1,2,3];
+                    break;
+                case 3:
+                    prison=1;
+                    order=[1,0,3,2];
+                    break;
+            }
+        }
+        else
+        {
+            //黑色
+            switch (card)
+            {
+                case 0:
+                    prison=1;
+                    order=[2,3,0,1];
+                    break;
+                case 1:
+                    prison=1;
+                    order=[3,2,1,0];
+                    break;
+                case 2:
+                    prison=3;
+                    order=[2,3,0,1];
+                    break;
+                case 3:
+                    prison=3;
+                    order=[3,2,1,0];
+                    break;
+            }
+        }
+
+        var s="锁"+prison;
+        for (i of order)
+        {
+            s+=' '+text[i];
+        }
+        $("#result_text").text(s);
+
+        set_btns("#btn_color_",2,cur_color);
+        set_btns("#btn_card_",4,cur_card);
+    }
+    function color_click(id){
+        //0=红
+        //1=黑
+        cur_color=id;
+        show_result(cur_color,cur_card);
+    }
+    function card_click(id){
+        //0=红桃
+        //1=方片
+        //2=黑桃
+        //3=梅花
+        cur_card=id;
+        show_result(cur_color,cur_card);
+    }
+</script>
+</html>
