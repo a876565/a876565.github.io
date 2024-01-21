@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static/jquery-3.6.1.min.js"></script>
+    <script src="static/react.development.js"></script>
+    <script src="static/react-dom.development.js"></script>
+    <link href="static/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/immer.umd.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="static/babel.min.js"></script>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <style>
+      .input-group{
+        width: fit-content
+      }
+    </style>
+    <script type="text/babel">
+      //"engravings"
+      const {useState,useReducer} = React;
+      const {produce} = immer;
+      //import { useState } from 'react';
+
+      function range(length){
+        return (Array.from(Array(length),(v,k)=>k))
+      }
+      function zeros(length){
+        return (Array.from(Array(length),(v,k)=>0))
+      }
+      
+      const EngravingList=[
+        "无","职业1","职业2","咒术人偶","怨恨","尖刺重锤","强力侧击","迅捷利刃","举步生风","奇袭大师","肾上腺素","决斗大师",
+               "觉醒","身披重甲","精力充沛","破釜沉舟","精密短刀","护盾猛攻","以太生成","以太充能","压制","重量强化","速战速决","不屈",
+               "法力充盈","法力爆发","回光返照","女神庇佑","妙手回春"
+      ];
+      const NegativeList=[
+        "无",
+        "减攻击","减防御","减攻速","减移速",
+      ]
+      const JewelryNameList=[
+        "石头",
+        "项链",
+        "耳环1",
+        "耳环2",
+        "戒指1",
+        "戒指2",
+      ]
+      const JewelryEngravingNum=6;
+      const JewelryPointMax=6;
+      const BookPointList=[0,3,6,9,12];
+      const JewelryPointList=range(JewelryPointMax+1)
+      const NegativePointList=range(3+1);
+      const StonePointList=range(10+1);
+      const initialPoints={
+        book_engraving:zeros(2),
+        book_point:zeros(2),
+        jewelry_engraving:zeros(JewelryEngravingNum),
+        jewelry_point:Array.from(Array(JewelryNameList.length),()=>zeros(JewelryEngravingNum)),
+        negative_engraving:zeros(JewelryNameList.length),
+        negative_point:zeros(JewelryNameList.length)
+      }
+
+      function check_compatible(a,b){
+        if (!b){
+          return false;
+        }
+
+        for (let i in a)
+        {
+          if (!b.hasOwnProperty(i)){
+            return false;
+          }
+          if (typeof(a[i])=="object")
+          {
+            if (!check_compatible(a[i],b[i])){
+              return false;
+            }
+          }
+        }
+        return true;
+      }
+
+      function engravings_pack(data,is_pack=false){ 
+        function e2s(e){
+          return String.fromCharCode(65+e);
+        }
+        function p2s(p){
+          return p.toString(16);
+        }
+        function s2e(s){
+          return s.charCodeAt(0)-65;
+        }
+        function s2p(s){
+          return parseInt(s,16);
+        }
+        function e_arr(s){
+          let r=[];
+          for (let i=0;i<s.length;i++){
+            let e=s.charCodeAt(i)-65;
+            if (e>=0&&e<EngravingList.length){
+              r.push(e);
+            }
+            else{
+              return null;
+            }
+          }
+          return r;
+        }
+        function p_arr(s){
+          let r=[];
+          for (let i=0;i<s.length;i++){
+            let p=parseInt(s[i],16);
+            if (p>=0&&p<=12){
+              r.push(p);
+            }
+            else{
+              return null;
+            }
+          }
+          return r;
+        }
+        function p_arr2(s){
+          let a=p_arr(s);
+          if (!a||a.length!=JewelryNameList.length*JewelryEngravingNum){
+            return null;
+          }
+          return Array.from(Array(JewelryNameList.length),(v,k)=>a.slice(k*JewelryEngravingNum,(k+1)*JewelryEngravingNum))
+        }
+        if (is_pack){
+          let be=data.book_engraving.reduce((s,v)=>s+e2s(v),"");
+          let bp=data.book_point.reduce((s,v)=>s+p2s(v),"");
+          let je=data.jewelry_engraving.reduce((s,v)=>s+e2s(v),"");
+          let jp=data.jewelry_point.reduce((s,v)=> s+v.reduce((t,u)=>t+p2s(u),""),"");
+          let ne=data.negative_engraving.reduce((s,v)=>s+e2s(v),"");
+          let np=data.negative_point.reduce((s,v)=>s+p2s(v),"");
+
+          return be+'|'+bp+'|'+je+'|'+jp+'|'+ne+'|'+np+'|';
+        }
+        else
+        {
+          try {
+              let s=data.split('|');
+              console.log(s);
+              let r={
+                book_engraving:e_arr(s[0]),
+                book_point:p_arr(s[1]),
+                jewelry_engraving:e_arr(s[2]),
+                jewelry_point:p_arr2(s[3]),
+                negative_engraving:e_arr(s[4]),
+                negative_point:p_arr(s[5])
+              }
+              if (check_compatible(initialPoints,r)){
+                return r;
+              }
+              else{
+                console.log("Check failed");
+                console.log(r);
+                return null;
+              }
+          } catch (error) {
+            console.log(error);
+          }
+          return null;
+        }
+      }
+      function EngravingSelector({id,value,dispatch,neg=false}){
+        let data_source=neg?NegativeList:EngravingList;
+        return (
+          <select value={value} style={{width:"fit-content"}} className="form-select" onChange={(e)=>dispatch({type:"Engraving",id:id,value:e.target.value})}>
+            {data_source.map((ename,index)=>(
+              <option value={index} key={index}>{ename}</option>
+            )
+            )}
+          </select>
+        )
+      }
+
+      function PointSelector({list,id,value,dispatch}){
+        return (
+          <select value={value} style={{width:"fit-content"}} className="form-select" onChange={(e)=>dispatch({type:"Point",id:id,value:e.target.value})}>
+            {list.map(val =>(
+              <option value={val} key={val}>{val}</option>
+            ))}
+          </select>
+        );
+      }
+
+      function EngravingDisplay({points}){
+        var engravings=zeros(EngravingList.length)
+        var negatives=zeros(NegativeList.length)
+        for (let i=0;i<2;i++)
+        {
+          engravings[points.book_engraving[i]]+=points.book_point[i];
+        }
+        for (let i=0;i<JewelryNameList.length;i++)
+        {
+          for (let j=0;j<JewelryEngravingNum;j++)
+          {
+            engravings[points.jewelry_engraving[j]]+=points.jewelry_point[i][j];
+          }
+          negatives[points.negative_engraving[i]]+=points.negative_point[i];
+        }
+
+        var result=[]
+        for (let i in engravings)
+        {
+          if (i>0&&engravings[i]>0)
+          {
+            result.push({name:EngravingList[i],value:engravings[i]});
+          }
+        }
+        for (let i in negatives)
+        {
+          if (i>0&&negatives[i]>0)
+          {
+            result.push({name:NegativeList[i],value:negatives[i]});
+          }
+        }
+        
+        function get_engraving_point_str(v){
+          let x= String.fromCharCode(0x25CF);
+          let part=x.repeat(5)+" ";
+          return part.repeat(Math.floor(v/5))+x.repeat(v%5);
+        }
+        return (
+          <>
+            {result.map((v,k)=>(
+              <tr key={k}>
+                <td>{v.name}</td>
+                <td>{get_engraving_point_str(v.value)}({v.value})</td>
+                <td>{Math.min(3,Math.floor(v.value/5))}</td>
+              </tr>
+            ))}
+          </>
+        );
+      }
+
+      function JewelryEngraving({engravings,points}){
+        return (
+          <p>
+            {engravings.map((v,i)=>(
+              points[i] &&
+              <span key={i}>{EngravingList[v]+":"+points[i]}|</span>
+            ))}
+          </p>
+        )
+      }
+
+      function JewelrySaves({saves,dispatch,onDeleteSave}){
+        /*
+         * saves={id:2,engravings=[2,4],points=[3,5]}
+         */
+        function handleSetJewelry(jid,jewelry){
+          dispatch({
+            type:"SetJewelry",
+            id:jid,
+            engravings:jewelry.engravings,
+            points:jewelry.points,
+            negative_engraving:jewelry.negative_engraving,
+            negative_point:jewelry.negative_point
+          })
+        }
+        return (
+          <>
+            {saves.map((v,k)=>(
+              <tr key={k}>
+                  <td>
+                    {JewelryNameList[v.id]}
+                  </td>
+                  <td>
+                      <JewelryEngraving engravings={v.engravings.concat(v.negative_engraving)} points={v.points.concat(v.negative_point)}/>
+                  </td>
+                  <td>
+                    <div className="input-group">
+                      {
+                          //stone
+                          v.id==0 ?
+                          <button className="btn btn-outline-secondary" onClick={e=>handleSetJewelry(v.id,v)}>{JewelryNameList[v.id]}</button>
+                          //other jewelry
+                          :
+                          <>
+                            {JewelryNameList.slice(1).map((t,u)=>(
+                              <button key={u} className="btn btn-outline-secondary" onClick={e=>handleSetJewelry(u+1,v)}>{t}</button>
+                            ))}
+                            
+                          </>
+                        }
+                      <button className="btn btn-outline-danger" onClick={e=>onDeleteSave(k)}>删除</button>
+                    </div>
+                  </td>
+              </tr>
+            ))}
+          </>
+        );
+      }
+
+      
+      function pointsReducer(state,action){
+        let val=parseInt(action.value)
+        if (action.type=='Engraving')
+        {
+          let s=action.id.split('_');
+          switch (s[0])
+          {
+            case "book":
+              return produce(state,draft=>{draft.book_engraving[s[1]]=val});
+            case "jewelry":
+              return produce(state,draft=>{draft.jewelry_engraving[s[1]]=val});
+            case "negative":
+              return produce(state,draft=>{draft.negative_engraving[s[1]]=val});
+          }
+        }
+        else if (action.type=='Point'){
+          let s=action.id.split('_');
+          switch (s[0])
+          {
+            case "book":
+              return produce(state,draft=>{draft.book_point[s[1]]=val});
+            case "jewelry":
+              return produce(state,draft=>{draft.jewelry_point[s[1]][s[3]]=val});
+            case "negative":
+              return produce(state,draft=>{draft.negative_point[s[1]]=val});
+          }
+        }
+        else if (action.type=='Replace')
+        {
+          return action.data;
+        }
+        else if (action.type=='SetJewelry')
+        {
+          let id=action.id;
+          let engravings=action.engravings;
+          let points=action.points;
+          let negative_engraving=action.negative_engraving
+          let negative_point=action.negative_point
+          function get_engraving_point(eid){
+
+            return eid?points.reduce((s,v,k)=>engravings[k]==eid?s+v:s,0):0;
+          }
+          return produce(state,draft=>{
+            draft.jewelry_point[id]=Array.from(Array(JewelryEngravingNum),(v,k)=>get_engraving_point(state.jewelry_engraving[k]));
+            draft.negative_engraving[id]=negative_engraving;
+            draft.negative_point[id]=negative_point;
+          });
+        }
+        else if (action.type=='ResetJewelry')
+        {
+          let id=action.id;
+          return produce(state,draft=>{
+            draft.jewelry_point[id]=zeros(JewelryEngravingNum)
+            draft.negative_engraving[id]=0
+            draft.negative_point[id]=0
+          });
+        }
+      }
+
+      function MyApp() {
+        const [points, dispatch] = useReducer(pointsReducer, initialPoints);
+        const [exText,setExText] = useState('');
+        const [jewelrySaves,setjewelrySaves] = useState([]);
+        function td_point_color(row,col){
+          if (points.jewelry_point[row][col]==0){
+            return "";
+          }
+          
+          let is_major=points.jewelry_point[row][col]>3;
+          let count=1;
+          for (let i=0;i<JewelryEngravingNum;i++)
+          {
+            if (i==col){
+              continue;
+            }
+            if (is_major&&row>0){
+              if (points.jewelry_point[row][i]>3)
+              {
+                return "red";
+              }
+            }
+            if (points.jewelry_point[row][i]>0)
+            {
+              count++;
+            }
+          }
+          if (count>2)
+          {
+            return "red";
+          }
+          return "green";
+        }
+
+        function handleImport(){
+          try {
+            let data=engravings_pack(exText,false);
+            if (data){
+              dispatch({type:"Replace",data:data});
+            }
+            else{
+              alert("Cannot import. Data is not compatible");
+            }
+          } catch (error) {
+            alert("Error"+error.message)
+          }
+
+        }
+        function handleExport(){
+          setExText(engravings_pack(points,true));
+        }
+
+        function saveJewelry(jid){
+          setjewelrySaves([...jewelrySaves,
+            {
+              id:jid,
+              engravings:points.jewelry_engraving.filter((v,i)=>points.jewelry_point[jid][i]>0),
+              points:points.jewelry_point[jid].filter(v=>v>0),
+              negative_engraving:points.negative_engraving[jid],
+              negative_point:points.negative_point[jid]
+            }
+          ])
+        }
+        return (
+          <>
+            <table className="table table-bordered text-center align-middle">
+              <tbody>
+                <tr>
+                  {/* 书刻印效果列表 */}
+                  <td>
+                    书
+                  </td>
+                  {[0,1].map(val => (
+                  <td key={val} colSpan="2">
+                    <div className="input-group">
+                    <EngravingSelector id={"book_"+val} value={points.book_engraving[val]} dispatch={dispatch}/>
+                    <PointSelector list={BookPointList} id={"book_"+val+"_point"} value={points.book_point[val]} dispatch={dispatch}/>
+                    </div>
+                  </td>
+                  )
+                  )}
+                  {/* 导入导出 */}
+                  <td colSpan="2">
+                    <div className="input-group">
+                      <input type="text" className="form-control"  value={exText} onChange={e=>setExText(e.target.value)}></input>
+                      <button className="btn btn-outline-primary" onClick={handleExport}>导出</button>
+                      <button className="btn btn-outline-primary" onClick={handleImport}>导入</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            {/* 首饰刻印效果列表 */}
+            <table className="table table-bordered text-center align-middle">
+              <thead>
+                <tr>
+                  <th></th>
+                  {range(JewelryEngravingNum).map(val =>(
+                    <th key={val}><EngravingSelector id={"jewelry_"+val} value={points.jewelry_engraving[val]} dispatch={dispatch}/></th>
+                  ))}
+                  <th>负面</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                {JewelryNameList.map((name,jid) =>(
+                <tr key={jid}>
+                  <td>{name}</td>
+                  {range(JewelryEngravingNum).map(val =>(
+                    <td key={val} style={{backgroundColor:td_point_color(jid,val)}}>
+                      <PointSelector list={jid==0?StonePointList:JewelryPointList} id={"jewelry_"+jid+"_point_"+val} value={points.jewelry_point[jid][val]} dispatch={dispatch}/>
+                    </td>
+                  ))}
+                  <td>
+                    <div className="input-group">
+                    <EngravingSelector neg={true} id={"negative_"+jid} value={points.negative_engraving[jid]} dispatch={dispatch}/>
+                    <PointSelector list={jid==0?StonePointList:NegativePointList} id={"negative_"+jid+"_point"} value={points.negative_point[jid]} dispatch={dispatch}/>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="input-group">
+                      <button className="btn btn-outline-secondary" onClick={(e)=>saveJewelry(jid)}>暂存</button>
+                      <button className="btn btn-outline-secondary" onClick={(e)=>dispatch({type:"ResetJewelry",id:jid})}>重置</button>
+                    </div>
+                  </td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* 刻印效果显示 */}
+            <table className="table table-bordered align-middle">
+              <thead>
+                <tr>
+                  <th>刻印效果</th>
+                  <th>点数</th>
+                  <th>等级</th>
+                </tr>
+              </thead>
+              <tbody>
+                <EngravingDisplay points={points}/>
+              </tbody>
+            </table>
+
+            
+            {/* 首饰列表 */}
+            <table className="table table-bordered">
+              <thead>
+                <tr>
+                  <th>装备</th>
+                  <th>刻印</th>
+                  <th>设置</th>
+                </tr>
+              </thead>
+              <tbody>
+                <JewelrySaves saves={jewelrySaves} dispatch={dispatch} 
+                  onDeleteSave={index=>setjewelrySaves(jewelrySaves.filter((v,k)=>k!=index))}/>
+              </tbody>
+            </table>
+          </>
+        );
+      }
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+  </body>
+</html>
