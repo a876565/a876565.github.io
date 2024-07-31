@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stone</title>
+    <script src="static/jquery-3.6.1.min.js"> </script>
+    <link href="static/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/react.development.js"></script>
+    <script src="static/react-dom.development.js"></script>
+    <script src="static/immer.umd.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="static/babel.min.js"></script>
+    <style>
+        .circle {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            float: left;
+        }
+
+        .circle-none {
+            border: solid 4px #555;
+        }
+
+        .circle-succ {
+            border: solid 15px #0e2;
+        }
+
+        .circle-fail {
+            border: solid 15px #e30;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="root">
+    </div>
+</body>
+
+<script>
+    /*const blob = new Blob(
+        Array.prototype.map.call(
+            //document.querySelectorAll("script[type='text\/js-worker']"),
+            document.querySelectorAll("script#worker"),
+            (script) => script.textContent,
+            { type: "text/javascript" },
+        ),
+    );*/
+
+
+    function create_preds() {
+        //let worker = new Worker(window.URL.createObjectURL(blob));
+        let worker = new Worker("scripts/stone_pred.js");
+        worker.task=null
+
+        worker.onmessage=(ev)=>{
+            if (worker.task){
+                let task=worker.task
+                worker.task=null
+                task(ev.data)
+            }
+            else{
+                console.log("Error no task!")
+            }
+        }
+        worker.init_pred=(target)=>{
+            return new Promise((resolve,reject)=>{
+                worker.task=resolve
+                worker.postMessage({msg:"init",target})
+            })
+        }
+        worker.predict=(state,chance)=>{
+            return new Promise((resolve,reject)=>{
+                worker.task=resolve
+                worker.postMessage({msg:"predict",state,chance})
+            })
+        }
+        return worker
+    }
+</script>
+<script type="text/babel">
+    const { useState, useReducer, useEffect } = React;
+    const { produce } = immer;
+    const EN_NAME = ["A1", "A2", "NE"]
+    const STONE_TARGETS = [[9, 7, 10], [10, 6, 10], [7, 9, 10], [6, 10, 10]]
+    var pred_worker=create_preds();
+
+    function StoneRow({ rowid, state, craft }) {
+        function get_circle_cls(r, i) {
+            if (i >= state[r].length) {
+                return "circle circle-none";
+            }
+            else {
+                if (state[r][i] == 'o') {
+                    return "circle circle-succ";
+                }
+                else {
+                    return "circle circle-fail";
+                }
+            }
+        }
+
+        function get_succ_num(row) {
+            let cnt = 0
+            row.forEach(x => { if (x == 'o') cnt++ })
+            return `${cnt}/${row.length}`
+        }
+        return (<tr key={rowid}>
+            <th>{EN_NAME[rowid]} {get_succ_num(state[rowid])}</th>
+            <td>{[...Array(10).keys()].map(v => (
+                <div key={v} className={get_circle_cls(rowid, v)}>
+                </div>)
+            )}
+            </td>
+            <td>
+                <div className="input-group">
+                    <button className="btn btn-outline-secondary" disabled={state[rowid].length >= 10} onClick={() => craft(rowid, true)}>√</button>
+                    <button className="btn btn-outline-secondary" disabled={state[rowid].length >= 10} onClick={() => craft(rowid, false)}>×</button>
+                </div>
+            </td>
+        </tr>)
+    }
+
+    function CraftPossible({ name, p }) {
+        return (<p>
+            <span>{name}{"->" + p.target}:</span>
+            <span style={ {fontSize:"large",fontStyle:"bold",color:"red"} }>{EN_NAME[p.choice]}</span>
+            <span>({(p.possibility*100).toFixed(6)}%)</span>
+        </p>)
+    }
+    function MyApp() {
+        const [state, setState] = useState([[], [], []])
+        const [chance, setChance] = useState(75)
+        const [probs, setProbs] = useState([])
+        const [histroy, setHistroy] = useState([])
+        const [recommand, setRecommand] = useState({})
+        const [loading, setLoading] = useState(true)
+
+        function initStone() {
+            pred_worker.init_pred(STONE_TARGETS).then(t => { 
+                setLoading(false) 
+                resetStone()
+            })
+        }
+
+        function updatePred(new_state,new_chance){
+            pred_worker.predict(new_state,new_chance).then((data)=>{
+                setRecommand(data.preds[data.recommand])
+                setProbs(data.preds.filter((v,i)=>i!=data.recommand))
+            })
+        }
+        function resetStone() {
+            setChance(75)
+            setState([[], [], []])
+            setHistroy([])
+            updatePred([[], [], []],75)
+        }
+        function undoStone() {
+            setState(histroy.at(-1).state)
+            setChance(histroy.at(-1).chance)
+            setHistroy(produce(histroy, draft => {
+                draft.pop()
+            }))
+        }
+        function craftStone(row, succ) {
+            //update state/histroy
+            let new_state = produce(state, draft => {
+                draft[row].push(succ ? 'o' : 'x')
+            })
+            let new_chance= succ?(chance>25?chance-10:25):(chance<75?chance+10:75)
+            setHistroy([...histroy, {state,chance}])
+            setState(new_state)
+            setChance(new_chance)
+            updatePred(new_state,new_chance)
+        }
+
+        useEffect(() => {
+            initStone();
+        }, [])
+
+        if (loading) {
+            return <p>Loading, may use up to several minutes depends on your cpu</p>
+        }
+        else {
+            return (<div>
+                <table className="table table-bordered">
+                    <tbody>
+                        <StoneRow rowid={0} state={state} craft={craftStone}></StoneRow>
+                        <StoneRow rowid={1} state={state} craft={craftStone}></StoneRow>
+                        <StoneRow rowid={2} state={state} craft={craftStone}></StoneRow>
+                        <tr>
+                            <td>
+                                <div className="input-group">
+                                    <button className="btn btn-outline-secondary" onClick={resetStone}>Reset</button>
+                                    <button className="btn btn-outline-secondary" disabled={histroy.length == 0} onClick={undoStone}>Undo</button>
+                                </div>
+                            </td>
+                            <td>
+                                <p style={ {fontStyle:"bold"} }>Chance={chance}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <CraftPossible name="Recommand" p={recommand} />
+                    <p>Others:</p>
+                    {probs.map((v, i) => <CraftPossible key={i} name={"Possible" + i} p={v}/>)}
+                </div>
+            </div>)
+        }
+    }
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />);
+</script>
+
+</html>

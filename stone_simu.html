@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stone</title>
+    <script src="static/jquery-3.6.1.min.js"> </script>
+    <link href="static/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/react.development.js"></script>
+    <script src="static/react-dom.development.js"></script>
+    <script src="static/immer.umd.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="static/babel.min.js"></script>
+    <style>
+        .circle {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            float: left;
+        }
+
+        .circle-none {
+            border: solid 4px #555;
+        }
+
+        .circle-succ {
+            border: solid 15px #0e2;
+        }
+
+        .circle-fail {
+            border: solid 15px #e30;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+    </div>
+</body>
+
+<script type="text/babel">
+
+    const { useState, useReducer, useEffect } = React;
+    const { produce } = immer;
+    const EN_NAME = ["A1", "A2", "NE"]
+    var sid = "";
+
+    function StoneRow({ rowid, state, craft }) {
+
+        function get_circle_cls(r, i) {
+            if (i >= state[r].length) {
+                return "circle circle-none";
+            }
+            else {
+                if (state[r][i] == 'o') {
+                    return "circle circle-succ";
+                }
+                else {
+                    return "circle circle-fail";
+                }
+            }
+        }
+
+        function get_succ_num(row){
+            let cnt=0
+            row.forEach(x=>{if (x=='o')cnt++})
+            return `${cnt}/${row.length}`
+        }
+        return (<tr key={rowid}>
+            <th>{EN_NAME[rowid]} {get_succ_num(state[rowid])}</th>
+            <td>{[...Array(10).keys()].map(v => (
+                <div key={v} className={get_circle_cls(rowid, v)}>
+                </div>)
+            )}
+            </td>
+            <td>
+                <div className="input-group">
+                    <button className="btn btn-outline-secondary" disabled={state[rowid].length >= 10} onClick={() => craft(rowid)}>Do!</button>
+                </div>
+            </td>
+        </tr>)
+    }
+
+    function MyApp() {
+        const [state, setState] = useState([[], [], []])
+        const [chance, setChance] = useState(75)
+
+        function resetStone(){
+            setState([[],[],[]])
+            setChance(75)
+        }
+
+        function craftStone(row){
+            setState(produce(state,draft=>{
+                if (Math.random()*100<chance){
+                    draft[row].push('o')
+                    setChance(chance>25?chance-10:25)
+                }
+                else{
+                    draft[row].push('x')
+                    setChance(chance<75?chance+10:75)
+                }
+            }))
+        }
+        return (<div>
+            <table className="table table-bordered">
+                <tbody>
+                    <StoneRow rowid={0} state={state} craft={craftStone}></StoneRow>
+                    <StoneRow rowid={1} state={state} craft={craftStone}></StoneRow>
+                    <StoneRow rowid={2} state={state} craft={craftStone}></StoneRow>
+                    <tr>
+                    <td>
+                        <div className="input-group">
+                            <button className="btn btn-outline-secondary" onClick={resetStone}>Reset</button>
+                        </div>
+                    </td>
+                    <td>
+                        Chance={chance}
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+            </div>
+        </div>)
+    }
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<MyApp />);
+</script>
+
+</html>
