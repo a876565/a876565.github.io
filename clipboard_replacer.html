@@ -256,17 +256,20 @@
         </div>
         
         <div class="button-group">
+            <button id="auto-btn" class="secondary-btn">
+                自动
+            </button>
             <button id="read-clipboard-btn" class="primary-btn">
-                <span class="icon">📋</span> 从剪贴板读取
+                从剪贴板读取
             </button>
             <button id="replace-btn" class="secondary-btn">
-                <span class="icon">🔄</span> 执行替换
+                执行替换
             </button>
             <button id="write-clipboard-btn" class="primary-btn">
-                <span class="icon">📤</span> 写入剪贴板
+                写入剪贴板
             </button>
             <button id="reset-btn" class="reset-btn">
-                <span class="icon">🗑️</span> 重置
+                重置
             </button>
         </div>
         
@@ -297,6 +300,7 @@
         const replacedTextArea = document.getElementById('replaced-text');
         const originalCount = document.getElementById('original-count');
         const replacedCount = document.getElementById('replaced-count');
+        const autoBtn = document.getElementById('auto-btn');
         const readClipboardBtn = document.getElementById('read-clipboard-btn');
         const replaceBtn = document.getElementById('replace-btn');
         const writeClipboardBtn = document.getElementById('write-clipboard-btn');
@@ -438,8 +442,15 @@
             updateCharacterCount();
             showStatus('已重置所有内容。准备好处理剪贴板内容。', 'info');
         }
+
+        async function autoAction(){
+            await readFromClipboard();
+            performReplace();
+            await writeToClipboard();
+        }
         
         // 事件监听
+        autoBtn.addEventListener('click', autoAction);
         readClipboardBtn.addEventListener('click', readFromClipboard);
         replaceBtn.addEventListener('click', performReplace);
         writeClipboardBtn.addEventListener('click', writeToClipboard);
