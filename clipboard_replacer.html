@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剪贴板内容替换工具</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        
+        .control-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .control-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        input {
+            padding: 12px 16px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .primary-btn {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .primary-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .secondary-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .secondary-btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+        
+        .reset-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .content-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-area {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .textarea-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        textarea {
+            padding: 16px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 200px;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .counter {
+            text-align: right;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .status {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+        
+        .status.success {
+            background-color: #d5f4e6;
+            border-left-color: #2ecc71;
+        }
+        
+        .status.error {
+            background-color: #fadbd8;
+            border-left-color: #e74c3c;
+        }
+        
+        .status.info {
+            background-color: #d6eaf8;
+            border-left-color: #3498db;
+        }
+        
+        .icon {
+            font-size: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .example {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .example h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .example ul {
+            padding-left: 20px;
+        }
+        
+        .example li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>剪贴板内容替换工具</h1>
+        </div>
+        
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="search-text">查找内容：</label>
+                <input type="text" id="search-text" placeholder="输入要查找的文本">
+            </div>
+            
+            <div class="input-group">
+                <label for="replace-text">替换为：</label>
+                <input type="text" id="replace-text" placeholder="输入替换后的文本">
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <button id="read-clipboard-btn" class="primary-btn">
+                <span class="icon">📋</span> 从剪贴板读取
+            </button>
+            <button id="replace-btn" class="secondary-btn">
+                <span class="icon">🔄</span> 执行替换
+            </button>
+            <button id="write-clipboard-btn" class="primary-btn">
+                <span class="icon">📤</span> 写入剪贴板
+            </button>
+            <button id="reset-btn" class="reset-btn">
+                <span class="icon">🗑️</span> 重置
+            </button>
+        </div>
+        
+        <div class="content-area">
+            <div class="textarea-group">
+                <label for="original-text">原始文本：</label>
+                <textarea id="original-text" placeholder="原始文本将显示在这里"></textarea>
+                <div class="counter">字符数: <span id="original-count">0</span></div>
+            </div>
+            
+            <div class="textarea-group">
+                <label for="replaced-text">替换后文本：</label>
+                <textarea id="replaced-text" placeholder="替换后的文本将显示在这里"></textarea>
+                <div class="counter">字符数: <span id="replaced-count">0</span></div>
+            </div>
+        </div>
+        
+        <div id="status" class="status info">
+            准备好处理剪贴板内容。请先点击"从剪贴板读取"按钮。
+        </div>
+    </div>
+
+    <script>
+        // DOM元素
+        const searchTextInput = document.getElementById('search-text');
+        const replaceTextInput = document.getElementById('replace-text');
+        const originalTextArea = document.getElementById('original-text');
+        const replacedTextArea = document.getElementById('replaced-text');
+        const originalCount = document.getElementById('original-count');
+        const replacedCount = document.getElementById('replaced-count');
+        const readClipboardBtn = document.getElementById('read-clipboard-btn');
+        const replaceBtn = document.getElementById('replace-btn');
+        const writeClipboardBtn = document.getElementById('write-clipboard-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const statusDiv = document.getElementById('status');
+        
+        // 更新字符计数
+        function updateCharacterCount() {
+            originalCount.textContent = originalTextArea.value.length;
+            replacedCount.textContent = replacedTextArea.value.length;
+        }
+        
+        // 显示状态消息
+        function showStatus(message, type = 'info') {
+            statusDiv.textContent = message;
+            statusDiv.className = 'status ' + type;
+        }
+        
+        // 从剪贴板读取文本
+        async function readFromClipboard() {
+            try {
+                // 请求剪贴板读取权限
+                const permission = await navigator.permissions.query({ name: 'clipboard-read' });
+                
+                if (permission.state === 'denied') {
+                    showStatus('错误：剪贴板访问权限被拒绝。请检查浏览器设置。', 'error');
+                    return;
+                }
+                
+                // 读取剪贴板文本
+                const text = await navigator.clipboard.readText();
+                
+                if (text.trim() === '') {
+                    showStatus('警告：剪贴板内容为空或只包含空格。', 'error');
+                } else {
+                    originalTextArea.value = text;
+                    updateCharacterCount();
+                    showStatus('成功：已从剪贴板读取文本。', 'success');
+                    
+                    // 如果查找框为空，自动填充示例
+                    if (!searchTextInput.value.trim()) {
+                        searchTextInput.value = '示例文本';
+                        replaceTextInput.value = '替换后的文本';
+                    }
+                }
+            } catch (error) {
+                console.error('读取剪贴板失败:', error);
+                
+                // 备用方案：使用传统方法
+                if (error.name === 'NotAllowedError') {
+                    showStatus('错误：用户拒绝了剪贴板访问权限。', 'error');
+                } else if (error.name === 'NotFoundError') {
+                    showStatus('错误：剪贴板内容为空。', 'error');
+                } else {
+                    showStatus(`错误：无法读取剪贴板。${error.message}`, 'error');
+                    
+                    // 提供备用方案
+                    originalTextArea.value = "剪贴板API访问失败。请手动在此输入文本，或检查浏览器权限。\n\n示例文本：\n这是一段示例文本，用于演示替换功能。\n查找'示例文本'并替换为'实际文本'。";
+                    updateCharacterCount();
+                }
+            }
+        }
+        
+        // 执行文本替换
+        function performReplace() {
+            const searchText = searchTextInput.value;
+            const replaceText = replaceTextInput.value;
+            const originalText = originalTextArea.value;
+            
+            if (!originalText.trim()) {
+                showStatus('错误：原始文本为空。请先从剪贴板读取或手动输入文本。', 'error');
+                return;
+            }
+            
+            if (!searchText.trim()) {
+                showStatus('错误：查找内容不能为空。', 'error');
+                return;
+            }
+            
+            try {
+                // 全局替换所有匹配项
+                const replacedText = originalText.split(searchText).join(replaceText);
+                replacedTextArea.value = replacedText;
+                
+                // 计算替换次数
+                const replaceCount = (originalText.split(searchText).length - 1);
+                
+                updateCharacterCount();
+                
+                if (replaceCount === 0) {
+                    showStatus(`完成：未找到"${searchText}"，没有进行任何替换。`, 'info');
+                } else {
+                    showStatus(`成功：完成了 ${replaceCount} 处替换。`, 'success');
+                }
+            } catch (error) {
+                console.error('替换操作失败:', error);
+                showStatus(`错误：替换操作失败。${error.message}`, 'error');
+            }
+        }
+        
+        // 将文本写入剪贴板
+        async function writeToClipboard() {
+            const textToCopy = replacedTextArea.value;
+            
+            if (!textToCopy.trim()) {
+                showStatus('错误：没有要写入剪贴板的文本。请先执行替换操作。', 'error');
+                return;
+            }
+            
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                showStatus('成功：已将替换后的文本写入剪贴板。', 'success');
+            } catch (error) {
+                console.error('写入剪贴板失败:', error);
+                
+                // 备用方案：使用传统方法
+                try {
+                    // 使用document.execCommand作为备用方案
+                    replacedTextArea.select();
+                    const success = document.execCommand('copy');
+                    
+                    if (success) {
+                        showStatus('成功：已使用备用方法将文本复制到剪贴板。', 'success');
+                    } else {
+                        showStatus('错误：无法写入剪贴板。请手动复制文本。', 'error');
+                    }
+                } catch (fallbackError) {
+                    showStatus('错误：剪贴板写入失败。请手动复制文本。', 'error');
+                }
+            }
+        }
+        
+        // 重置所有内容
+        function resetAll() {
+            searchTextInput.value = '';
+            replaceTextInput.value = '';
+            originalTextArea.value = '';
+            replacedTextArea.value = '';
+            updateCharacterCount();
+            showStatus('已重置所有内容。准备好处理剪贴板内容。', 'info');
+        }
+        
+        // 事件监听
+        readClipboardBtn.addEventListener('click', readFromClipboard);
+        replaceBtn.addEventListener('click', performReplace);
+        writeClipboardBtn.addEventListener('click', writeToClipboard);
+        resetBtn.addEventListener('click', resetAll);
+        
+        // 文本区域输入时更新字符计数
+        originalTextArea.addEventListener('input', updateCharacterCount);
+        replacedTextArea.addEventListener('input', updateCharacterCount);
+        
+        // 初始示例
+        window.addEventListener('load', function() {
+            // 设置示例文本
+            originalTextArea.value = "";
+            updateCharacterCount();
+            
+            // 设置示例查找和替换文本
+            searchTextInput.value = "";
+            replaceTextInput.value = "";
+            
+            // 执行一次示例替换
+            performReplace();
+        });
+    </script>
+</body>
+</html>
