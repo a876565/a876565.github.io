@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fast Search</title>
+    <style>
+        
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #47515c;}
+        #results { margin-top: 20px; }
+        #results table { width: 100%; border-collapse: collapse; }
+        #results th, #results td { padding: 8px; border: 1px solid #eee; text-align: left;}
+        #results th { background: #495057; color:#0ebaff}
+        h2 {
+            color: #f7efc4;
+            font-size: 36px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid
+        }
+        .warn {color: #ffc107}
+        .name { font-weight: bold; }
+        .type { font-style: italic; color: #888; }
+        .brief { color: #555; }
+        input[type="text"]{
+            color: #fce49e;
+            background-color: #515d69;;
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+        }
+    </style>
+    <style>
+        :root {
+        --bs-body-bg: #1a1a1b;
+        --bs-body-bg: transparent;
+        --unique-color: #af6025;
+        --divination-color: #0ebaff;
+        --prophecy-color: #b54bff;
+        --quest-color: #4ae63a;
+        --currency-color: #aa9e82;
+        --gem-color: #1ba29b;
+        --cold-color: #366492;
+        --afflictionmod-color: #16191c;
+        --heist-color: #191e19;
+        --lightning-color: #ffd700;
+        --magic-color: #8888ff;
+        --rare-color: #ffff77;
+        --green-color: #46a239;
+        --chaos-color: #d02090;
+        --fire-color: #960000;
+        --title-color: #e7b478;
+        --legacy-color: #d4913f;
+        --normal-color: #c8c8c8;
+        --corrupted-color: #d20000;
+        --scourged-color: #ff6e25;
+        --default-color: #7f7f7f;
+        --fractured-color: #a29162;
+        --crafted-color: #b4b4ff;
+        --dark-color: #0f0f0f;
+        --craftaffectwarning-color: #ebc850;
+        --coolgrey-700: 209, 18%, 30%;
+        --yellow-300: 50, 98%, 64%
+    }
+    .gem_red {
+        color: var(--corrupted-color)
+    }
+
+    .explicitMod,
+    .implicitMod,
+    .magicitem {
+        color: var(--magic-color)
+    }
+
+    .explicitMod,
+    .implicitMod {
+        font-family: "FontinSmallCaps", "Fontin SmallCapsa", Verdana, Arial, Helvetica, sans-serif;
+        line-height: 1.3
+    }
+
+    .item_currency,
+    .currencyitem,
+    .StackableCurrency {
+        color: var(--currency-color)
+    }
+
+    .normal {
+        font-weight: normal;
+        font-style: normal
+    }
+
+    .item_description {
+        color: var(--default-color)
+    }
+
+    .map_notinatlas {
+        color: var(--normal-color)
+    }
+
+    .mod-value {
+        color: white
+    }
+
+    .separator {
+        height: 7.91075px;
+        margin: 1px 0px
+    }
+    .fractured {
+        color: var(--fractured-color)
+    }
+    .enchanted {
+        color: #b8daf2
+    }
+
+    .uniqueName,
+    .uniqueTypeLine,
+    .uniqueitem {
+        color: #ef6916
+    }
+
+    .rareitem {
+        color: var(--rare-color)
+    }
+
+    .magicitem {
+        color: var(--magic-color)
+    }
+
+    .whiteitem {
+        color: var(--normal-color)
+    }
+
+    .normal {
+        color: var(--normal-color)
+    }
+
+    .gemitem {
+        color: var(--gem-color)
+    }
+
+    .currencyitem {
+        color: var(--currency-color)
+    }
+
+    .corrupted {
+        color: var(--corrupted-color)
+    }
+
+    .divination,
+    .DivinationCard {
+        color: var(--divination-color)
+    }
+        .secondary {
+        color: #5382a1
+    }
+
+    .default {
+        color: #7f7f7f
+    }
+
+    .augmented {
+        color: var(--magic-color)
+    }
+    </style>
+</head>
+<body>
+    <h2 class="default">Search</h2>
+    <input type="text" id="searchInput" width="100%" height="40px" autocomplete="off" />
+    <div id="results"></div>
+    <script>
+        // Simulated database
+        var database = [
+            { name: 'Alice Johnson', brief: 'Software engineer from NY', type: 'Engineer' },
+            { name: 'Bob Smith', brief: 'Data analyst in LA', type: 'Analyst' },
+            { name: 'Charlie Brown', brief: 'Project manager', type: 'Manager' },
+            { name: 'David Lee', brief: 'UX designer', type: 'Designer' },
+            { name: 'Eve Adams', brief: 'Cybersecurity expert', type: 'Security' },
+            { name: 'Frank Miller', brief: 'Backend developer', type: 'Developer' },
+            { name: 'Grace Hopper', brief: 'Pioneer in computer science', type: 'Researcher' },
+            { name: 'Hannah White', brief: 'QA specialist', type: 'QA' },
+            { name: 'Grace Smith', brief: 'Data analyst in LA', type: 'Analyst' },
+            { name: 'Hannah Smith', brief: 'Data analyst in LA', type: 'Analyst' },
+        ];
+        
+
+        load_db('poedb/cards.json')
+        load_db('poedb/uniques.json')
+        const input = document.getElementById('searchInput');
+        const resultsDiv = document.getElementById('results');
+
+        input.addEventListener('input', function() {
+            const query = input.value.trim().toLowerCase();
+            resultsDiv.innerHTML = '';
+            if (query.length < 2) return;
+            const matches = database.filter(item => item.name.toLowerCase().includes(query));
+            if (matches.length === 0) {
+                resultsDiv.innerHTML = '<div class="warn">No results found.</div>';
+                return;
+            }
+            if (matches.length>10){
+                matches=matches.slice(0,10)
+            }
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <thead>
+                    <tr><th>Name</th><th>Type</th><th>Brief</th></tr>
+                </thead>
+                <tbody>
+                    ${matches.map(item =>
+                        `<tr>
+                            <td class="name">${item.name}</td>
+                            <td class="type">${item.type}</td>
+                            <td class="brief">${item.brief}</td>
+                        </tr>`
+                    ).join('')}
+                </tbody>
+            `;
+            resultsDiv.appendChild(table);
+        });
+
+        function load_db(name){
+            fetch(name)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+                database=database.concat(data)
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
