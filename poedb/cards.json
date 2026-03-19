@@ -1,0 +1,2702 @@
+[
+  {
+    "name": "<span class=\"divination\">Three Faces in the Dark</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Chaos Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Doctor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Headhunter</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hermit</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Lifesprig</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lantadors Lost Love</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Two-Stone Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Metalsmiths Gift</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Prismatic Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Battle Born</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Axe</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Gladiator</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Nightmare Bascinet</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Scholar</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">40x Scroll of Wisdom</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Brittle Emperor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Voll's\n                                                    Devotion</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Poet</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Blood of\n                                                    Corruption</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Carrion Crow</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Life Armour</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Hope</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Prismatic Ring</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fiend</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Headhunter</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Vinias Token</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Orb of Regret</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Summoner</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Minion Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Cataclysm</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 13\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Spell\n                                                    Gem</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hunger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Taste of Hate</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hoarder</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Exalted Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Drunken Aristocrat</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Divination Distillate</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Sun</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rise of the Phoenix</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Warden</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Amulet</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Scarred Meadow</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Wake of Destruction</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dark Mage</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Staff</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">55</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Gemcutter</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Gemcutter's Prism</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Gambler</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"divination\">Divination Card</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lover</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">79</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Road to Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Runic One-Hand\n                                                    Weapon</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Avenger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mj\u00f6lner</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Emperors Luck</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">5x Currency</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Time-Lost Relic</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">League-Specific Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lucky Connections</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">20x Orb of Fusing</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Feast</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Romira's\n                                                    Banquet</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Rain of Chaos</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Chaos Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Watcher</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Crown of Eyes</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Incantation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Whispering Ice</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Coveted Possession</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">5x Regal Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Kings Heart</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Kaom's Heart</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Abandoned Wealth</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Exalted Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wind</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Windripper</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Pact</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Pledge of Hands</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Gemcutters Promise</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Celestial Justicar</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Astral Plate</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Chains that Bind</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Body Armour</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Artist</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 4 Enhance</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Inventor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Vaal Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Pack Leader</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Alpha's Howl</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Jack in the Box</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Union</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Gemcutter's Prism</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Queen</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 16\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Atziri's Acuity</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Humility</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Tabula Rasa</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Explorer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Map</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Spoiled Prince</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Dictator's Prophecy\n                                                    Wand</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Betrayal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Maligaro's Virtuosity</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Floras Gift</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Five-Link Staff</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">66</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Siren</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Whispering\n                                                    Ice</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The One With All</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Le Heup of All</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Last One Standing</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Atziri's Disfavour</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Doedres Madness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Doedre Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Encroaching Darkness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Map</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wrath</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Chaos Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Kings Blade</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-31\"><span class=\"magicitem\">Bloodthirsty Eternal Sword</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">66</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Trial</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">15</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Gentleman</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Sword</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">House of Mirrors</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Mirror of Kalandra</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Wealth and Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 4 Enlighten</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Catalyst</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Vaal Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Vast</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Song of the Sirens</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Gift of the Gemling Queen</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 20 Support Gem</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dragons Heart</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 4 Empower</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fox</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 20 Gem</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Doppelganger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Mirror Arrow</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Survivalist</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">7x Orb of Alchemy</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Death</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mon'tregul's Grasp</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Grave Knowledge</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Summon Raging\n                                                    Spirit</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Jester</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-31\"><span class=\"magicitem\">Merciless\n                                                        One-Hand Weapon</span><br/><span class=\"default\">Item Level:</span>\n<span class=\"normal\">100</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Mercenary</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Shield</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Inoculated</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Seraphim's Armour</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Loyalty</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Orb of Fusing</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Pride Before the Fall</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Kaom's Heart</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Audacity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Doryani's Fist</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Assassins Favour</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Dagger</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Hunters Resolve</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bow</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Scholar of the Seas</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mao Kun</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Conduit</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Doryani's Fist</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Tower</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Staff</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Twins</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Gemini Claw of\n                                                    Celebration</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Anarchys Price</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 13\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Voltaxic Rift</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lich</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Midnight\n                                                    Bargain</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Thaumaturgist</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Shavronne's\n                                                    Revelation</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Aesthete</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Shavronne Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Enlightened</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 3 Enlighten</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Hunters Reward</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Taming</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fletcher</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Drillneck</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Surveyor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">14</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Bowyers Dream</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Harbinger\n                                                    Bow</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">91</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Surgeon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Surgeon's Flask</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Volatile Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Vaal Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Last Hope</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Mortal Hope</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Hubris</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Blind Venture</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Ring</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Merciless Armament</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-31\"><span class=\"magicitem\">Merciless\n                                                        Two-Hand Weapon</span><br/><span class=\"default\">Item Level:</span>\n<span class=\"normal\">100</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Warlord</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Coronal\n                                                    Maul</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Demoness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Death's Hand</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Traitor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Wand</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Offering</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Shavronne's Wrappings</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lost Worlds</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">15</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lord in Black</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Ring of Bameth</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Mothers Parting Gift</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Fertile Mind</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Body</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Body Armour</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Turn the Other Cheek</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Pacifism</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Glimmer of Hope</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Gold Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Ethereal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Vaal Regalia</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Prosperity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Perandus' Gold Ring</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Sigil</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Unassailable Amulet</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dapper Prodigy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Body\n                                                    Armour</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Rabid Rhoa</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Malicious Gemini\n                                                    Claw</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Soul</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Soul Taker</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lion</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Lioneye Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dragon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Coruscating Elixir</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Rats</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rat's Nest</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Risk</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Ventor's Gamble</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Tranquillity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Voltaxic Rift</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Her Mask</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Sacrifice Fragment</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Treasure Hunter</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Vaults of\n                                                    Atziri</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Earth Drinker</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Granite Flask</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wolfs Shadow</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Hyaon's Fury</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Arena Champion</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">12</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Sephirot</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Divine Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Visionary</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Lioneye's Vision</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Thunderous Skies</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Storm Cloud</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Dying Anguish</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 19 Transfigured\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+19%</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Immortal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"divination\">House of Mirrors</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Throne</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Kaom's Roots</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Boundless Realms</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Map</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Devastator</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Atziri's\n                                                    Disfavour</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Destined to Crumble</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Body Armour</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Shard of Fate</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Vivid Jewel</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Heterochromia</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Two-Stone Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Rain Tempter</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">6</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Tyrant</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Merciless\n                                                    Weapon</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Web</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Weapon of Crafting</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Harvester</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Harvest</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lunaris Priestess</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Sire of Shards</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Emperor of Purity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Holy\n                                                    Chainmail</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">60</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Cursed King</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rigwald's Curse</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Stormcaller</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Agnerod Staff</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lysahs Respite</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Agate Amulet</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Cartographers Delight</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"normal\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">5</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lucky Deck</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Stacked Deck</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Light and Truth</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Crystal Sceptre</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Endurance</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Vivid Crimson Jewel</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Penitent</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Unset Ring</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wolf</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rigwald Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Diallas Subjugation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-31\"><span class=\"gemitem\">Support\n                                                        Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Calling</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Beyond Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Valkyrie</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Nemesis Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Formless Sea</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Varunastra</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Oath</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Death's Oath</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Scavenger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Carcass Jack</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Mawr Blaidd</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 16\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Eyes of the Greatwolf</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Porcupine</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Short\n                                                    Bow</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">50</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Coming Storm</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Lightning Coil</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Polymath</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Astramentis</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wolverine</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Claw</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Mitts</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Gloves</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wretched</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Belt</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wolven Kings Bite</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rigwald's Quills</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Standoff</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rustic Sash</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Forsaken</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Umbilicus Immortalis</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Garish Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Jewel</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lingering Remnants</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 16\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Vaal Temple Map</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Spark and the Flame</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Berek's Respite</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Saints Treasure</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">2x Exalted Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Call to the First Ones</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Tier 1 Talisman</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Might is Right</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Trypanon</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Opulent</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Ring</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Struck by Lightning</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Electrocuting\n                                                    Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">76</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Atziris Arsenal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Weapon</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Ruthless Ceinture</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Meginord's\n                                                    Girdle</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">No Traces</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">30x Orb of Scouring</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Realm</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Portal</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+1-20%</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Eye of the Dragon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Jewel</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Blazing Fire</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Chin Sol</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Left to Fate</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">16</span><br/><span class=\"corrupted\">Unidentified Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Rebirth</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 27\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Charan's Sword</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Insatiable</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Harvest</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Obscured</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Rusted Bard</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">4x Tainted Mythic Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Forbidden Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Balefire</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Breach</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Breach Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dreamer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Chayula Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The World Eater</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Starforge</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Deceiver</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Belt of the\n                                                    Deceiver</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Puzzle</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Witch</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Kiara's Determination</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Immortal Resolve</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Linked Body\n                                                    Armour</span><br/><span class=\"default\">Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Jewellers Boon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Five-Linked Body\n                                                    Armour</span><br/><span class=\"default\">Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Darkest Dream</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Severed in\n                                                    Sleep</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fathomless Depths</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Lightpoacher</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Undaunted</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Nemesis Item</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Admirer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Atziri Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Sword Kings Salute</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Daresso's Salute</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Army of Blood</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bloodbond</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Celestial Stone</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Opal Ring</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Shaper Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Perfection</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Shaper Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dreamland</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Poorjoy's Asylum</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Harmony of Souls</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">9x Shrieking Essence</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Samurais Eye</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Watcher's Eye</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hale Heart</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Elder Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Mayor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Light of Meaning</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Undisputed</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Merciless Vaal\n                                                    Axe</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Elder Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Rite of Elements</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Golem\n                                                    Gem</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Three Voices</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Essence</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Professor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Putrid Cloister</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Beast</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Belly of the Beast</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Innocent</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">40x Orb of Regret</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wilted Rose</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Aura Gem</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Endless Darkness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Voidforge</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Beauty Through Death</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Atziri's Reflection</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Price of Protection</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-28\"><span class=\"rareitem\">Elder\n                                                        Guardian Occupied Map</span><br/><span class=\"default\">Modifiers:</span> <span class=\"normal\">8</span><br/><span class=\"corrupted\">Corrupted</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Boon of the First Ones</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bestiary Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Twilight Moon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Twilight Temple</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Cacophony</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Deafening Essence</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Sacrifice</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Sacrificial\n                                                    Garb</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Dab of Ink</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Poet's Pen</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Nurse</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"divination\">The Doctor</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Master Artisan</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">20x Quality Currency</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Life Thief</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Zerphi's Heart</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Seeker</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">3x Orb of Annulment</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Messenger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Harbinger Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Mad King</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Vaal Aspect</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Boon of Justice</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Offering to the Goddess</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Journey</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Journey Tattoo</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Arrogance of the Vaal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Item</span><br/> <span class=\"corrupted\">Two-Implicit</span><br/> <span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Landing</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Mountain</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Jewel of Potency</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Seven Years Bad Luck</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 13\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Mirror Shard</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Golden Era</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Flaring Eclipse\n                                                    Staff</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Monochrome</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Valdo's Puzzle Box</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Dark Temptation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Obliteration</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Alone in the Darkness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Delve Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Sambodhis Vow</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Mortal Fragment</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lord of Celebration</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Sceptre of\n                                                    Celebration</span><br/><span class=\"default\">Shaper Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Vanity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Tabula Rasa</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Imperial Legacy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 22\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Imperial\n                                                    Bow</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Burning Blood</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Xoph's Blood</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Primordial</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Jewel</span><br/><span class=\"magicitem\">Primordial</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Echoes of Love</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Fidelitas' Spike</span><br/>\n<span class=\"corrupted\">Two-Implicit</span><br/> <span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Thirst for Knowledge</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Gluttony</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Alluring Bounty</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Exalted Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fool</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">20x Orb of Chance</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Pride of the First Ones</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Farrul's Fur</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Deep Ones</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Tidebreaker</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Archmages Right Hand</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Glyphic Prophecy\n                                                    Wand</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Dark Dreams</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Bone Helmet</span><br/><span class=\"default\">Elder Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Buried Treasure</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Sulphite Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Demigods Wager</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Orb of Annulment</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Old Man</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Fishing Rod</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Nooks Crown</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Bone Helmet</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Elder Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Side Quest</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Incarnation Echo</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Price of Loyalty</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"span class=\">Skin of the\n                                                    Loyal</span><br/><size-26><span class=\"default\">Item Level:</span>\n<span class=\"normal\">25</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></size-26></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Remembrance</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Precursor's\n                                                    Emblem</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">More is Never Enough</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">4x Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Vile Power</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Doomfletch</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Bargain</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Azyrans Reward</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Prismatic\n                                                    Jewel</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Skeleton</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 1 Summon\n                                                    Skeletons</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Eye of Terror</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mageblood</span><br/>\n<brequelmutated> {Foulborn}</brequelmutated>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Demon</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Headhunter</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Akils Prophecy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Elegant Round\n                                                    Shield</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Damned</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Soul Ripper</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Void of the Elements</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Overpowering Opal\n                                                    Ring</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Elder Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Deal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Cartography Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wolfs Legacy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Vaults of Atziri</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Baited Expectations</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Fishing Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Succor of the Sinless</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bottled Faith</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Underground Forest</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Grand Eldritch\n                                                    Ichor</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Escape</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Seven-League Step</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Deathly Designs</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Trap Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Chosen</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Skin of the\n                                                    Lords</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Camerias Cut</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fishmonger</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Albino Rhoa Feather</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Bones</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Vaal Summon\n                                                    Skeletons</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Friendship</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Aul's Uprising</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Craving</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Unending Hunger</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Etched in Blood</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Rigwald's\n                                                    Quills</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Squandered Prosperity</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Light of\n                                                    Meaning</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Strategist</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Inspired\n                                                    Learning</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Cheater</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Tinkerers Table</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">5x Fossil</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Easy Stroll</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">15</span><br/><span class=\"default\">Modifiers:</span> <span class=\"normal\">8</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Progeny of Lunaris</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Dying Sun</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Eldritch Decay</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Uber Elder Fragment</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Council of Cats</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Farrul Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Tumbleweed</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-30\"><span class=\"magicitem\">Diamond\n                                                        Ring of Redemption</span><br/><span class=\"default\">Item\n                                                        Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Redeemer Item</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hive of Knowledge</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Machina Mitts</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Gift of Asenath</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Asenath's Gentle\n                                                    Touch</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Note in the Wind</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Asenath's Mark</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Greatest Intentions</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Saviour</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The White Knight</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Astral\n                                                    Plate</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Crusader Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Prometheus Armoury</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">One-Hand Weapon</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Double-Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Peaceful Moments</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Timeless Jewel</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Awakened</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">86</span><br/><span class=\"default\">Double-Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Familiar Call</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Jewellery of\n                                                    Farrul</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Shaper + Hunter\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Long Con</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Elderslayer's Exalted\n                                                    Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Gulf</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Thread of Hope</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Bitter Blossom</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Chaos\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Triskaidekaphobia</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 13\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-26\"><span class=\"rareitem\">Map</span></span><br/><span class=\"size-26\"><span class=\"default\">Map Tier:</span> <span class=\"normal\">13</span><br/><span class=\"default\">Delirium:</span>\n<span class=\"normal\">100%</span><br/><span class=\"default\">Modifiers:</span> <span class=\"normal\">8</span><br/><span class=\"corrupted\">Corrupted</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Unrequited Love</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 16\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">19x Mirror Shard</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Cache</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Jewellery</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Academic</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Inspired Learning</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Desecrated Virtue</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 4 Exceptional Support\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Unchained</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Facebreaker</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Unexpected Prize</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-29\"><span class=\"uniqueitem\">Attribute\n                                                        Transforming Jewel</span></span><br/><span class=\"size-29\"><span class=\"corrupted\">Corrupted</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Cursed Words</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 13\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Maw of Mischief</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Journalist</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Helmet</span><br/><span class=\"default\">Double-Veiled Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Haunting Shadows</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Metamorph Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Acclimatisation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">20x Orb of Alteration</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Whiteout</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Cospri's Malice</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Dying Light</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Diamond Ring</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Shaper + Elder\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Fateful Meeting</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">League-Specific\n                                                    Item</span><br/><span class=\"default\">Double-Influenced\n                                                    Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">97</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Astromancer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"size-27\"><span class=\"uniqueitem\">The\n                                                        Eternity Shroud</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Keepers Corruption</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Eldritch Bone Helmet\n                                                    (Concentrated Effect)</span><br/><span class=\"default\">Item\n                                                    Level:</span> <span class=\"normal\">89</span><br/><span class=\"default\">Elder Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Reckless Ambition</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Omeyocan</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Love Through Ice</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Unnatural\n                                                    Instinct</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Draped in Dreams</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Six-Link Astral\n                                                    Plate</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Patient</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"divination\">The Nurse</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Long Watch</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Fourth Vow</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Bear Woman</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Fecund Ursine\n                                                    Pelt</span><br/><span class=\"default\">Warlord Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Brotherhood in Exile</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">One With\n                                                    Nothing</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Winters Embrace</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Circle of Fear</span><br/><span class=\"enchanted\">Three-Implicit</span><br/><span class=\"enchanted\">Synthesised</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Sambodhis Wisdom</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Tabula Rasa</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Enthusiasts</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Victario's\n                                                    Influence</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Broken Promises</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Diamond Ring</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">87</span><br/><span class=\"enchanted\">Two-Implicit</span><br/><span class=\"enchanted\">Synthesised</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Brush%2C Paint and Palette</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"divination\">The Artist</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Deadly Joy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Torrent's\n                                                    Reclamation</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Adventuring Spirit</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Victario's Influence</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Eternal War</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Timeless Jewel</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Prejudice</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Item</span><br/><span class=\"default\">Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Card Sharp</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Divination Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Modest Request</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Megalomaniac</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Luminous Trove</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Voices</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Hook</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Transfigured\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Last Supper</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bino's Kitchen Knife</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Emptiness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\">Disabled</div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Sea of Blue</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">13x Orb of Alteration</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Offspring</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Ryslatha's Coil</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Price of Prescience</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Vaal Temple Map</span><br/><span class=\"default\">Delirium:</span> <span class=\"normal\">100%</span><br/><span class=\"corrupted\">Corrupted</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Minds Eyes</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Astral Projector</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Terrible Secret of Space</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Transfigured Golem\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+23%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Blessing of Moosh</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Transfigured\n                                                    Gem</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Costly Curio</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Item</span><br/><span class=\"default\">Double-Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lachrymal Necrosis</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Jewel</span><br/><span class=\"enchanted\">Implicit Modifier:</span> <br/><span class=\"magicitem\">Corrupted Blood cannot be inflicted on\n                                                    you</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Dementophobia</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 11\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Delirium Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Ambitious Obsession</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Skittering Delirium\n                                                    Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Desperate Crusade</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Prism Guardian</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Stone Perfected</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Jewel</span><br/><span class=\"magicitem\">Primordial</span><br/><span class=\"corrupted\">1-2\n                                                    Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Treasures of the Vaal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Vaal Jewel</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Rabbits Foot</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Incursion Vial</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Chasing Risk</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Synthesis Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Prince of Darkness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Elegant Hubris</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Catch</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 18\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Fishing Rod</span><br/><span class=\"enchanted\">Incubated</span><br/><span class=\"default\">Item\n                                                    Level:</span> <span class=\"normal\">99</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Eternal Bonds</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Replica Cortex</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Disdain</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Delirium Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Scout</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">7x Exalted Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Guardians Challenge</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Shaper Guardian Map</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Forgotten Treasure</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Leather Belt</span><br/><span class=\"default\">Double-Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fox in the Brambles</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Bramblejack</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Aspirant</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Item</span><br/><span class=\"default\">Elevated Item</span><br/><span class=\"default\">Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Judging Voices</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Forbidden Shako</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Bijoux</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Cluster Jewel</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">84</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Silence and Frost</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Pandemonius</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Misery in Darkness</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Shroud of the Lightless</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Tireless Extractor</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Oil</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Justified Ambition</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Synthesis Map</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Parasitic Passengers</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x\n                                                    Incubator</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">84</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Duality</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Body Armour</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Double-Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The One That Got Away</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Replica Bated Breath</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Transformation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Tainted Mythic Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Magnum Opus</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"enchanted\">Three-Implicit</span><br/><span class=\"enchanted\">Synthesised</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Imperfect Memories</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"enchanted\">Three-Implicit</span><br/><span class=\"enchanted\">Synthesised</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Magma Crab</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Vaal Molten\n                                                    Shell</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Altered Perception</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Simulacrum</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Further Invention</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Helmet</span><br/><span class=\"default\">Double-Influenced Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Brawny Battle Mage</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Merciless Tornado\n                                                    Wand</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Fate Worse Than Death</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Cortex</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Destination</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Watcher's Eye</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Rebirth and Renewal</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Horned Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Forward Gaze</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Replica Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Apothecary</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mageblood</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Home</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Empower, Enhance or\n                                                    Enlighten</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+1-20%</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Dungeon Master</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Belt</span><br/><span class=\"default\">Double-Influenced Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">From Bone to Ashes</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Ngamahu's\n                                                    Flame</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Darker Half</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">5x Eldritch Chaos Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Broken Truce</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Cold Iron Point</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Doryanis Epiphany</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Transfigured\n                                                    Gem</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Endless Night</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Maloney's Mechanism</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Shieldbearer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Squire</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Choking Guilt</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Stranglegasp</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Enforcer</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Spiked Gloves of the Conquest\n                                                    (Culling Strike)</span><br/><span class=\"default\">Item Level:</span>\n<span class=\"normal\">86</span><br/><span class=\"default\">Warlord Item</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Shepherds Sandals</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Boots</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Azure Rage</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Punishing Map</span><br/><span class=\"default\">Map Tier:</span> <span class=\"normal\">16</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Leviathan</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Maven Item</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Price of Devotion</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mageblood</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Astral Protection</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Shield</span><br/><span class=\"default\">Shaper Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Gemcutters Mercy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Empower, Enhance or\n                                                    Enlighten</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Checkmate</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">76x Simulacrum\n                                                    Splinter</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lethean Temptation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Nebulis</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Something Dark</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Blueprint</span><br/><span class=\"default\">Area Level:</span> <span class=\"normal\">83</span><br/><span class=\"default\">Fully Revealed</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Man With Bear</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Bestiary Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Alivias Grace</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Queen of the Forest</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Auspicious Ambitions</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Experimented\n                                                    Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"default\">Double-Influenced\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Divine Beauty</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">7x Divine Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Wedding Gift</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Arakaali's Fang</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Insane Cat</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Mageblood</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">84</span><br/><span class=\"corrupted\">Corrupted</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Ever-Changing</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Orb of Unmaking</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Dusty Memory</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"rareitem\">Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"fractured\">Fractured</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Return of the Rat</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Tavukai</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Finishing Touch</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">1x Fertile Catalyst</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Poisoned Faith</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Arakaali's\n                                                    Fang</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">A Chilling Wind</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Vaal Cold\n                                                    Snap</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Matryoshka</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\">\n<rareitem> {Onyx Amulet}<br/><span class=\"size-25\"><span class=\"default\">Item\n                                                            Level:</span> <span class=\"normal\">85</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"default\">Influenced Item</span><br/><span class=\"enchanted\">Four Anointments</span><br/><span class=\"enchanted\">Incubating Talisman Item</span><br/><span class=\"corrupted\">Corrupted</span></span></rareitem>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Fortunate</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 12\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">2x Divine Orb</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Fire Of Unknown Origin</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 7",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Nimis</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Fathers Love</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Sublime Vision</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Who Asked</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"magicitem\">Dictator's\n                                                    Weapon</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span><br/><span class=\"fractured\">Fractured</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Eldritch Perfection</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Item</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">100</span><br/><span class=\"enchanted\">Perfect Eldritch\n                                                    Implicit Modifier</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Assassins Gift</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Divinarius</span><br/><span class=\"corrupted\">Two-Implicit</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">I See Brothers</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">2x Fracturing Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Avian Pursuit</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">1,500x Vivid Crystallised\n                                                    Lifeforce</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Temperance</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Relic</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lonely Warrior</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 10\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Defiance of Destiny</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Toxic Tidings</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Dendrobate</span><br/> <span class=\"corrupted\">Two-Implicit</span><br/> <span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Runic Luck</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 4",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">10x Vendor Refresh\n                                                    Currency</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Last Stand</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Surrender</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Damnation</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 16\n",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">The Original\n                                                    Scripture</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">83</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">When Currents Blaze</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Stormfire</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">History</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">2x Hinekora's Lock</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Last Laugh</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Replica Dragonfang's\n                                                    Flight</span><br/><span class=\"corrupted\">Corrupted</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Lake</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 8",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Reflecting Mist</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">One Last Score</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">Experimented\n                                                    Jewellery</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">86</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Bound by Flame</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Level 21 Flame\n                                                    Link</span><br/><span class=\"default\">Quality:</span> <span class=\"augmented\">+20%</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Outfoxed</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Veiled Exalted Orb</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Everlasting</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Originator Incarnation\n                                                    Item</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Lucky Bastion</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 6",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Svalinn</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Miracle</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 3",
+    "brief": "<div class=\"explicitMod\"><span class=\"gemitem\">Awakened Exceptional Gem</span>\n</div>"
+  },
+  {
+    "name": "<span class=\"divination\">Apocalypse</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Eyes of the\n                                                    Greatwolf</span><br/><span class=\"default\">Item Level:</span> <span class=\"normal\">82</span><br/><span class=\"corrupted\">One Corruption\n                                                    Implicit</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Slumbering Beast</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 5",
+    "brief": "<div class=\"explicitMod\"><span class=\"currencyitem\">Hinekora's Lock</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">The Silly Boy</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 9",
+    "brief": "<div class=\"explicitMod\"><span class=\"whiteitem\">6x Horned Scarab</span></div>"
+  },
+  {
+    "name": "<span class=\"divination\">Reflection of the Heart</span>",
+    "type": "card",
+    "stacks": "Stack Size: 1 / 2",
+    "brief": "<div class=\"explicitMod\"><span class=\"uniqueitem\">Kalandra's Touch</span></div>"
+  }
+]
