@@ -163,6 +163,7 @@
 </head>
 <body>
     <h2>Search</h2>
+    <div>All data from poedb.tw</div>
     <input type="text" id="searchInput" width="100%" height="40px" autocomplete="off" />
     <div id="results"></div>
     <script>
@@ -190,13 +191,10 @@
             const query = input.value.trim().toLowerCase();
             resultsDiv.innerHTML = '';
             if (query.length < 2) return;
-            const matches = database.filter(item => item.name.toLowerCase().includes(query));
+            const matches = database.filter(item => item.name.toLowerCase().includes(query)).slice(0,10);
             if (matches.length === 0) {
                 resultsDiv.innerHTML = '<div class="warn">No results found.</div>';
                 return;
-            }
-            if (matches.length>10){
-                matches=matches.slice(0,10)
             }
             const table = document.createElement('table');
             table.innerHTML = `
