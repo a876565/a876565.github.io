@@ -171,16 +171,6 @@
     <script>
         // Simulated database
         var database = [
-            { name: 'Alice Johnson', brief: 'Software engineer from NY', type: 'Engineer' },
-            { name: 'Bob Smith', brief: 'Data analyst in LA', type: 'Analyst' },
-            { name: 'Charlie Brown', brief: 'Project manager', type: 'Manager' },
-            { name: 'David Lee', brief: 'UX designer', type: 'Designer' },
-            { name: 'Eve Adams', brief: 'Cybersecurity expert', type: 'Security' },
-            { name: 'Frank Miller', brief: 'Backend developer', type: 'Developer' },
-            { name: 'Grace Hopper', brief: 'Pioneer in computer science', type: 'Researcher' },
-            { name: 'Hannah White', brief: 'QA specialist', type: 'QA' },
-            { name: 'Grace Smith', brief: 'Data analyst in LA', type: 'Analyst' },
-            { name: 'Hannah Smith', brief: 'Data analyst in LA', type: 'Analyst' },
         ];
         
 
@@ -220,6 +210,7 @@
         function resetSearch() {
             input.value = '';
             resultsDiv.innerHTML = '';
+            input.focus();
         }
         function load_db(name){
             fetch(name)
