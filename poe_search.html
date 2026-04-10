@@ -162,28 +162,52 @@
 </head>
 <body  data-bs-theme="dark">
     <h2>Search</h2>
-    <div>All data from poedb.tw</div>
     <div class="input-group">
         <input class="form-control" type="text" id="searchInput" width="100%" height="40px" autocomplete="off" />
         <button class="btn btn-outline-danger" type="button" onclick="resetSearch()"> Reset</button>
     </div>
     <div id="results"></div>
+    <hr class="divider">
+    <div data-bs-toggle="collapse" href="#data_info" role="button" aria-expanded="false" aria-controls="data_info">All data from poedb.tw</div>
+    <div id="data_info" class="collapse"></div>
     <script>
-        // Simulated database
-        var database = [
-        ];
+        // Simulated items
+        var items = [];
+        var price_values = {};
+        var last_update = [];
         
 
-        load_db('poedb/cards.json')
-        load_db('poedb/uniques.json')
+        load_db('cards')
+        load_db('uniques')
+        load_price('economy_cards')
         const input = document.getElementById('searchInput');
         const resultsDiv = document.getElementById('results');
+
+        function get_name_html(item){
+            if (item.type === 'card')
+            {
+                return `<span class="divination">${item.name}</span>`;
+            }
+            else if (item.type === 'unique')
+            {
+                return `<span class="uniqueitem">${item.name}</span><span class="uniqueitem">${item.basetype}</span>`;
+            }
+            else
+            {
+                return `${item.name}`;
+            }
+        }
+        function get_price_html(item){
+            return `<span class=\"currencyitem\">${price_values[item.name]||''}</span>`;
+        }
 
         input.addEventListener('input', function() {
             const query = input.value.trim().toLowerCase();
             resultsDiv.innerHTML = '';
-            if (query.length < 2) return;
-            const matches = database.filter(item => item.name.toLowerCase().includes(query)).slice(0,10);
+            if (query.length < 2) {
+                return;
+            }
+            const matches = items.filter(item => item.name.toLowerCase().includes(query)).slice(0,10);
             if (matches.length === 0) {
                 resultsDiv.innerHTML = '<div class="warn">No results found.</div>';
                 return;
@@ -192,14 +216,15 @@
             table.className="table table-striped table-dark";
             table.innerHTML = `
                 <thead>
-                    <tr><th>Name</th><th>Type</th><th>Brief</th></tr>
+                    <tr><th>Name</th><th>Type</th><th>Brief</th><th>Price</th></tr>
                 </thead>
                 <tbody>
                     ${matches.map(item =>
                         `<tr>
-                            <td class="name">${item.name}</td>
+                            <td class="name">${get_name_html(item)}</td>
                             <td class="type">${item.type}</td>
                             <td class="brief">${item.brief}</td>
+                            <td class="brief">${get_price_html(item)}</td>
                         </tr>`
                     ).join('')}
                 </tbody>
@@ -212,19 +237,46 @@
             resultsDiv.innerHTML = '';
             input.focus();
         }
-        function load_db(name){
-            fetch(name)
+        
+        function updateTimes(name, time) {
+            last_update.push({'name': name, 'time': time});
+            const dataInfoDiv = document.getElementById('data_info');
+            // Build tooltip text
+            const text = last_update.map(item =>
+                `${item.name}: ${new Date(item.time * 1000).toLocaleString()}`
+            ).join('<br>');
+            dataInfoDiv.innerHTML = text || '';
+        }
+        
+        function retrive_data(name,callback){
+            fetch(`poedb/${name}.json`)
             .then(response => {
                 if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.json();
             })
-            .then(data => {
-                console.log(data)
-                database=database.concat(data)
-            })
+            .then(callback)
             .catch(error => console.error('Error:', error));
+        }
+        
+        function load_db(name){
+            retrive_data(name,data => {
+                console.log(data);
+                items=items.concat(data.data);
+                last_update[name]=data.last_update;
+                updateTimes(name,data.last_update);
+            })
+        }
+        
+        function load_price(name){
+            retrive_data(name,data => {
+                console.log(data);
+                data.data.forEach(x => {
+                    price_values[x.name] = `${x.price_value} ${x.price_unit}`;
+                });
+                updateTimes(name,data.last_update);
+            })
         }
     </script>
 </body>

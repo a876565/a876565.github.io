@@ -1,0 +1,2155 @@
+{
+    "last_update": 1775790380,
+    "data": [
+        {
+            "name": "Damnation",
+            "price_value": 426.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "House of Mirrors",
+            "price_value": 120.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "History",
+            "price_value": 67.8,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Unrequited Love",
+            "price_value": 56.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Father's Love",
+            "price_value": 52.9,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Miracle",
+            "price_value": 52.5,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Price of Devotion",
+            "price_value": 36.5,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Slumbering Beast",
+            "price_value": 33.4,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Apothecary",
+            "price_value": 26.4,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Lucky Bastion",
+            "price_value": 24.9,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Eye of Terror",
+            "price_value": 17.7,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Outfoxed",
+            "price_value": 13.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Immortal",
+            "price_value": 12.4,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Demon",
+            "price_value": 10.9,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Insane Cat",
+            "price_value": 9.18,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Divine Justice",
+            "price_value": 8.93,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Choking Guilt",
+            "price_value": 8.32,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Lake",
+            "price_value": 5.86,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Progeny of Lunaris",
+            "price_value": 5.36,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Fire Of Unknown Origin",
+            "price_value": 5.23,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Brother's Gift",
+            "price_value": 5.22,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Love Through Ice",
+            "price_value": 5.12,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Seven Years Bad Luck",
+            "price_value": 3.54,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Desecrated Virtue",
+            "price_value": 2.14,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Reflection of the Heart",
+            "price_value": 490.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Endless Darkness",
+            "price_value": 489.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Doctor",
+            "price_value": 1.45,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Luminous Trove",
+            "price_value": 458.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "One Last Score",
+            "price_value": 1.34,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Fiend",
+            "price_value": 376.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Auspicious Ambitions",
+            "price_value": 349.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Temperance",
+            "price_value": 321.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Journey",
+            "price_value": 318.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dragon's Heart",
+            "price_value": 291.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Wealth and Power",
+            "price_value": 292.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Broken Promises",
+            "price_value": 1.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "The Gulf",
+            "price_value": 287.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Succor of the Sinless",
+            "price_value": 280.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Sephirot",
+            "price_value": 275.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lonely Warrior",
+            "price_value": 272.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Squandered Prosperity",
+            "price_value": 238.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Matryoshka",
+            "price_value": 214.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Destination",
+            "price_value": 205.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Samurai's Eye",
+            "price_value": 203.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Mad King",
+            "price_value": 201.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Familiar Call",
+            "price_value": 194.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Rabbit's Foot",
+            "price_value": 194.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lethean Temptation",
+            "price_value": 173.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Divine Beauty",
+            "price_value": 173.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "I See Brothers",
+            "price_value": 168.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Imperfect Memories",
+            "price_value": 142.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Everlasting",
+            "price_value": 134.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Assassin's Gift",
+            "price_value": 118.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Forbidden Fruit",
+            "price_value": 98.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Mayor",
+            "price_value": 90.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Monochrome",
+            "price_value": 89.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Shieldbearer",
+            "price_value": 84.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Modest Request",
+            "price_value": 85.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Apocalypse",
+            "price_value": 84.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Eternal War",
+            "price_value": 83.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Magnum Opus",
+            "price_value": 1.0,
+            "price_unit": "divine"
+        },
+        {
+            "name": "Fateful Meeting",
+            "price_value": 76.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Pride of the First Ones",
+            "price_value": 71.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Remembrance",
+            "price_value": 69.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Greatest Intentions",
+            "price_value": 68.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Awakened",
+            "price_value": 66.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Damned",
+            "price_value": 67.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Enlightened",
+            "price_value": 64.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Leviathan",
+            "price_value": 60.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Duality",
+            "price_value": 59.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Further Invention",
+            "price_value": 59.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The World Eater",
+            "price_value": 55.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Winter's Embrace",
+            "price_value": 55.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Silly Boy",
+            "price_value": 54.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Chosen",
+            "price_value": 52.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Price of Loyalty",
+            "price_value": 53.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Aspirant",
+            "price_value": 53.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fortunate",
+            "price_value": 50.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Prince of Darkness",
+            "price_value": 48.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Long Con",
+            "price_value": 47.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Side Quest",
+            "price_value": 47.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Nurse",
+            "price_value": 46.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Rebirth",
+            "price_value": 45.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Home",
+            "price_value": 42.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Note in the Wind",
+            "price_value": 40.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Beauty Through Death",
+            "price_value": 40.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Reckless Ambition",
+            "price_value": 38.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Gemcutter's Mercy",
+            "price_value": 38.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Avian Pursuit",
+            "price_value": 38.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Old Man",
+            "price_value": 37.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Craving",
+            "price_value": 34.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Artist",
+            "price_value": 36.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lachrymal Necrosis",
+            "price_value": 32.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dungeon Master",
+            "price_value": 33.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Chasing Risk",
+            "price_value": 32.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Brotherhood in Exile",
+            "price_value": 29.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Peaceful Moments",
+            "price_value": 31.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Darker Half",
+            "price_value": 31.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Offering",
+            "price_value": 28.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Queen",
+            "price_value": 27.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Forgotten Treasure",
+            "price_value": 28.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Sacrifice",
+            "price_value": 26.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Who Asked",
+            "price_value": 26.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Eye of the Dragon",
+            "price_value": 26.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Garish Power",
+            "price_value": 24.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hale Heart",
+            "price_value": 26.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Soul",
+            "price_value": 23.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Doryani's Epiphany",
+            "price_value": 23.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Terrible Secret of Space",
+            "price_value": 23.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hook",
+            "price_value": 24.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Judging Voices",
+            "price_value": 21.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Formless Sea",
+            "price_value": 20.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Tranquillity",
+            "price_value": 18.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Silence and Frost",
+            "price_value": 18.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Something Dark",
+            "price_value": 18.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Eldritch Decay",
+            "price_value": 19.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Misery in Darkness",
+            "price_value": 18.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Rebirth and Renewal",
+            "price_value": 18.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Anarchy's Price",
+            "price_value": 16.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Nook's Crown",
+            "price_value": 16.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Vast",
+            "price_value": 17.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dementophobia",
+            "price_value": 17.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The White Knight",
+            "price_value": 16.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Deadly Joy",
+            "price_value": 16.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Void of the Elements",
+            "price_value": 17.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wolf's Legacy",
+            "price_value": 16.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Last Supper",
+            "price_value": 15.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Treasure Hunter",
+            "price_value": 15.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Bowyer's Dream",
+            "price_value": 12.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Desperate Crusade",
+            "price_value": 12.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Siren",
+            "price_value": 14.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Azyran's Reward",
+            "price_value": 14.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Strategist",
+            "price_value": 15.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "From Bone to Ashes",
+            "price_value": 12.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Warlord",
+            "price_value": 12.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Chilling Wind",
+            "price_value": 13.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Bones",
+            "price_value": 13.8,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Mawr Blaidd",
+            "price_value": 12.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dark Dreams",
+            "price_value": 10.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Etched in Blood",
+            "price_value": 9.93,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Keeper's Corruption",
+            "price_value": 10.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Astromancer",
+            "price_value": 10.4,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Catch",
+            "price_value": 11.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Darkest Dream",
+            "price_value": 11.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Shortcut",
+            "price_value": 12.3,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Akil's Prophecy",
+            "price_value": 9.99,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Last One Standing",
+            "price_value": 10.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Burning Blood",
+            "price_value": 10.7,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Tumbleweed",
+            "price_value": 11.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Dab of Ink",
+            "price_value": 8.57,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Draped in Dreams",
+            "price_value": 8.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Gift of Asenath",
+            "price_value": 9.19,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Pact",
+            "price_value": 9.41,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Poet",
+            "price_value": 8.65,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Shepherd's Sandals",
+            "price_value": 8.66,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wedding Gift",
+            "price_value": 9.36,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dying Light",
+            "price_value": 8.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Friendship",
+            "price_value": 8.94,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Celestial Stone",
+            "price_value": 9.17,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fishmonger",
+            "price_value": 9.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Tinkerer's Table",
+            "price_value": 10.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Bound by Flame",
+            "price_value": 9.58,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Bitter Blossom",
+            "price_value": 9.96,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Fate Worse Than Death",
+            "price_value": 10.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Scholar of the Seas",
+            "price_value": 10.1,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Professor",
+            "price_value": 9.86,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Celestial Justicar",
+            "price_value": 7.64,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Perfection",
+            "price_value": 7.38,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The One That Got Away",
+            "price_value": 7.59,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Buried Treasure",
+            "price_value": 8.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Surgeon",
+            "price_value": 8.64,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Costly Curio",
+            "price_value": 9.85,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Void",
+            "price_value": 9.81,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Haunting Shadows",
+            "price_value": 8.13,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Death",
+            "price_value": 5.25,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Merciless Armament",
+            "price_value": 5.68,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Beast",
+            "price_value": 6.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Deep Ones",
+            "price_value": 5.33,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Enforcer",
+            "price_value": 6.45,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Stone Perfected",
+            "price_value": 7.11,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Feast",
+            "price_value": 7.22,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Unexpected Prize",
+            "price_value": 7.19,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Pride Before the Fall",
+            "price_value": 5.61,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fletcher",
+            "price_value": 5.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Rabid Rhoa",
+            "price_value": 5.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Scavenger",
+            "price_value": 5.63,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Turn the Other Cheek",
+            "price_value": 6.13,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Last Laugh",
+            "price_value": 4.49,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Thaumaturgist",
+            "price_value": 5.74,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Chaotic Disposition",
+            "price_value": 4.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Echoes of Love",
+            "price_value": 5.22,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dialla's Subjugation",
+            "price_value": 5.31,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dying Anguish",
+            "price_value": 5.76,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Magma Crab",
+            "price_value": 5.83,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Eternal Bonds",
+            "price_value": 7.13,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Rite of Elements",
+            "price_value": 5.54,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Arrogance of the Vaal",
+            "price_value": 5.95,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Brush, Paint and Palette",
+            "price_value": 6.12,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dreamer",
+            "price_value": 7.17,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Endless Night",
+            "price_value": 3.91,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Immortal Resolve",
+            "price_value": 2.89,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Poisoned Faith",
+            "price_value": 3.26,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Sambodhi's Wisdom",
+            "price_value": 3.91,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Blazing Fire",
+            "price_value": 2.74,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Chains that Bind",
+            "price_value": 3.49,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dapper Prodigy",
+            "price_value": 3.02,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Enthusiasts",
+            "price_value": 3.29,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Ethereal",
+            "price_value": 3.45,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Gentleman",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Harvester",
+            "price_value": 3.27,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hive of Knowledge",
+            "price_value": 4.35,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Insatiable",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Long Watch",
+            "price_value": 3.9,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Oath",
+            "price_value": 4.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Pack Leader",
+            "price_value": 4.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Visionary",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Toxic Tidings",
+            "price_value": 3.37,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Unchained",
+            "price_value": 4.12,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Hunter's Reward",
+            "price_value": 3.06,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lysah's Respite",
+            "price_value": 3.47,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Academic",
+            "price_value": 3.55,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Cursed King",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Deceiver",
+            "price_value": 3.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Life Thief",
+            "price_value": 4.15,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The One With All",
+            "price_value": 4.05,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Abandoned Wealth",
+            "price_value": 3.89,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Encroaching Darkness",
+            "price_value": 5.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Triskaidekaphobia",
+            "price_value": 4.85,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Patient",
+            "price_value": 5.14,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Audacity",
+            "price_value": 2.68,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Emperor of Purity",
+            "price_value": 2.43,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Avenger",
+            "price_value": 2.36,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fox in the Brambles",
+            "price_value": 2.42,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Traitor",
+            "price_value": 2.5,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Bijoux",
+            "price_value": 2.15,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Polymath",
+            "price_value": 3.08,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Primordial",
+            "price_value": 2.78,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Return of the Rat",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Ruthless Ceinture",
+            "price_value": 2.83,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Brother's Stash",
+            "price_value": 2.79,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lucky Deck",
+            "price_value": 2.83,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Finishing Touch",
+            "price_value": 3.16,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Saint's Treasure",
+            "price_value": 3.28,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Seeker",
+            "price_value": 2.83,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Union",
+            "price_value": 3.47,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Azure Rage",
+            "price_value": 4.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Price of Prescience",
+            "price_value": 4.39,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Boon of the First Ones",
+            "price_value": 3.58,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Admirer",
+            "price_value": 4.57,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Forward Gaze",
+            "price_value": 4.08,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Undaunted",
+            "price_value": 3.77,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Alivia's Grace",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Assassin's Favour",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Astral Protection",
+            "price_value": 1.98,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Atziri's Arsenal",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Broken Truce",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Forbidden Power",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Lich",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Blind Venture",
+            "price_value": 2.03,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Underground Forest",
+            "price_value": 3.29,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Eldritch Perfection",
+            "price_value": 2.74,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Messenger",
+            "price_value": 3.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Cursed Words",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Dark Temptation",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Destined to Crumble",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Humility",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Hunter's Resolve",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Imperial Legacy",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Light and Truth",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Might is Right",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Mitts",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Prometheus' Armoury",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Adventuring Spirit",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Archmage's Right Hand",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Army of Blood",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Battle Born",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Bear Woman",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Betrayal",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Body",
+            "price_value": 1.75,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Brawny Battle Mage",
+            "price_value": 1.32,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Coming Storm",
+            "price_value": 1.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Carrion Crow",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Conduit",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dark Mage",
+            "price_value": 1.01,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Demoness",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Escape",
+            "price_value": 1.35,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Flora's Gift",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Gladiator",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Golden Era",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hermit",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Incantation",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Mercenary",
+            "price_value": 1.84,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Porcupine",
+            "price_value": 1.74,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Road to Power",
+            "price_value": 1.85,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Inoculated",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Jester",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Journalist",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The King's Heart",
+            "price_value": 1.05,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Lunaris Priestess",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Scarred Meadow",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Spoiled Prince",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Stormcaller",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Sun",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Throne",
+            "price_value": 1.15,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Tower",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Twins",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Tyrant",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Undisputed",
+            "price_value": 1.32,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Watcher",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Web",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Whiteout",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wind",
+            "price_value": 1.35,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wolf's Shadow",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wolven King's Bite",
+            "price_value": 1.18,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Vanity",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Vile Power",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Mother's Parting Gift",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Call to the First Ones",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Glimmer of Hope",
+            "price_value": 1.35,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Hope",
+            "price_value": 1.32,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Emperor's Luck",
+            "price_value": 2.57,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wilted Rose",
+            "price_value": 2.57,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lingering Remnants",
+            "price_value": 2.56,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Heterochromia",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Hubris",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Shard of Fate",
+            "price_value": 1.39,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Brittle Emperor",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Cache",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Endurance",
+            "price_value": 1.44,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Prosperity",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Lord in Black",
+            "price_value": 1.02,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Lover",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Metalsmith's Gift",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Mind's Eyes",
+            "price_value": 1.06,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Mountain",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Offspring",
+            "price_value": 1.16,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Spark and the Flame",
+            "price_value": 1.16,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wretched",
+            "price_value": 1.37,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Thirst for Knowledge",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "When Currents Blaze",
+            "price_value": 2.09,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Acclimatisation",
+            "price_value": 1.11,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Ambitious Obsession",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Disdain",
+            "price_value": 2.12,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Transformation",
+            "price_value": 2.2,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Deathly Designs",
+            "price_value": 2.13,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Realm",
+            "price_value": 2.29,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Justified Ambition",
+            "price_value": 2.26,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Jack in the Box",
+            "price_value": 2.42,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wolf",
+            "price_value": 2.35,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Opulent",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Penitent",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Risk",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Standoff",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Sword King's Salute",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Warden",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Alluring Bounty",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Sea of Blue",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Coveted Possession",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Demigod's Wager",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Ever-Changing",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Harmony of Souls",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "No Traces",
+            "price_value": 1.45,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Parasitic Passengers",
+            "price_value": 1.6,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Loyalty",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Lucky Connections",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Rain of Chaos",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Runic Luck",
+            "price_value": 1.02,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Society's Remorse",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Cacophony",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Catalyst",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fool",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Gemcutter",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Heroic Shot",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hoarder",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Innocent",
+            "price_value": 1.78,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Rusted Bard",
+            "price_value": 1.76,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Tireless Extractor",
+            "price_value": 1.87,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Wrath",
+            "price_value": 1.11,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Gemcutter's Promise",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Gift of the Gemling Queen",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Grave Knowledge",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Blessing of Moosh",
+            "price_value": 2.03,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Cataclysm",
+            "price_value": 1.98,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Doppelganger",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Fox",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Skeleton",
+            "price_value": 1.14,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Volatile Power",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Altered Perception",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Boundless Realms",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Last Hope",
+            "price_value": 1.02,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Left to Fate",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Easy Stroll",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Baited Expectations",
+            "price_value": 1.85,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Council of Cats",
+            "price_value": 1.71,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Breach",
+            "price_value": 1.99,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Lion",
+            "price_value": 2.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Valkyrie",
+            "price_value": 1.71,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Inventor",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Master Artisan",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Scholar",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Scout",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Survivalist",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Three Faces in the Dark",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Three Voices",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Vinia's Token",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Summoner",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Deal",
+            "price_value": 1.37,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Prejudice",
+            "price_value": 1.51,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Boon of Justice",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Cameria's Cut",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Guardian's Challenge",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Her Mask",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Man With Bear",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "More is Never Enough",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Sambodhi's Vow",
+            "price_value": 1.18,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Card Sharp",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dreamland",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Price of Protection",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Earth Drinker",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Dragon",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Drunken Aristocrat",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Hunger",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Witch",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "A Dusty Memory",
+            "price_value": 1.22,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Alone in the Darkness",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Doedre's Madness",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Aesthete",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Calling",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "The Gambler",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        },
+        {
+            "name": "Time-Lost Relic",
+            "price_value": 1.0,
+            "price_unit": "chaos"
+        }
+    ]
+}
