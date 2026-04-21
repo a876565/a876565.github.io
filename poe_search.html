@@ -168,7 +168,7 @@
     </div>
     <div id="results"></div>
     <hr class="divider">
-    <div data-bs-toggle="collapse" href="#data_info" role="button" aria-expanded="false" aria-controls="data_info">All data from poedb.tw</div>
+    <div data-bs-toggle="collapse" href="#data_info" role="button" aria-expanded="false" aria-controls="data_info">All data from poedb.tw and poe.ninja</div>
     <div id="data_info" class="collapse"></div>
     <script>
         // Simulated items
@@ -179,7 +179,7 @@
 
         load_db('cards')
         load_db('uniques')
-        load_price('economy_cards')
+        load_price('prices')
         const input = document.getElementById('searchInput');
         const resultsDiv = document.getElementById('results');
 
@@ -272,8 +272,11 @@
         function load_price(name){
             retrive_data(name,data => {
                 console.log(data);
-                data.data.forEach(x => {
-                    price_values[x.name] = `${x.price_value} ${x.price_unit}`;
+                data.items.forEach(x => {
+                    if (x.links){
+                        return;
+                    }
+                    price_values[x.name] = `${x.divines}`;
                 });
                 updateTimes(name,data.last_update);
             })
