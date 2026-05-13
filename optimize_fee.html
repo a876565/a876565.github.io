@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static/jquery-3.6.1.min.js"></script>
+    <script src="static/react.development.js"></script>
+    <script src="static/react-dom.development.js"></script>
+    <link href="static/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <title>Fee Optimizer</title>
+    
+</head>
+<body>
+    <h2>Fee Optimizer</h2>
+    <div class="input-group mb-3">
+        <input type="number" id="feeInput" class="form-control" placeholder="Enter fee amount">
+        <select id="personNum" class="form-select">
+            <option value="4">4 persons</option>
+            <option value="8">8 persons</option>
+        </select>
+    </div>
+    <div class="text-md-start">Optimized price: <span id="optimizedPrice"></span></div>
+    <div class="text-md-start">Profit: <span id="optimizedProfit"></span></div>
+    <script>
+        const fees=[
+            { amount: 1000, fee: 75},
+            { amount: 2000, fee: 125},
+            { amount: 3000, fee: 175},
+            { amount: 4000, fee: 225},
+            { amount: 5000, fee: 275},
+            { amount: 6000, fee: 325},
+            { amount: 7000, fee: 375},
+            { amount: 8000, fee: 425},
+            { amount: 9000, fee: 475},
+            { amount: 10000, fee: 750},
+            { amount: 20000, fee: 1250},
+            { amount: 30000, fee: 1750},
+            { amount: 40000, fee: 2250},
+            { amount: 50000, fee: 2750},
+            { amount: 60000, fee: 3250},
+            { amount: 70000, fee: 3750},
+            { amount: 80000, fee: 4250},
+            { amount: 90000, fee: 4750},
+            { amount: 100000, fee: 7500},
+            { amount: 200000, fee: 12500},
+            { amount: 300000, fee: 17500},
+            { amount: 400000, fee: 22500},
+            { amount: 500000, fee: 27500},
+            { amount: 600000, fee: 32500},
+            { amount: 700000, fee: 37500},
+            { amount: 800000, fee: 42500},
+            { amount: 900000, fee: 47500},
+            { amount: 1000000, fee: 75000},
+            { amount: 2000000, fee: 125000},
+            { amount: 3000000, fee: 175000},
+            { amount: 4000000, fee: 225000},
+            { amount: 5000000, fee: 275000},
+            { amount: 6000000, fee: 325000},
+            { amount: 7000000, fee: 375000},
+            { amount: 8000000, fee: 425000},
+            { amount: 9000000, fee: 475000},
+        ];
+
+        function getFee(price) {
+            for (let i = fees.length - 1; i >= 0; i--) {
+                if (price >= fees[i].amount) {
+                    return fees[i].fee;
+                }
+            }
+            return 0;
+        }
+
+        function optimizePrice(price) {
+            const fee = getFee(price);
+            const personNum = parseInt($('#personNum').val());
+            let max_price = 0;
+            for (let x = 1000; x < price; x += 1) {
+                let profit_sell = price - fee - x;
+                let profit_splits = Math.floor(Math.floor(x * 1.1) / (personNum-1));
+                if (profit_sell > profit_splits) {
+                    max_price = x;
+                }
+            }
+            return max_price;
+        }
+
+        $('#feeInput').on('input', function() {
+            const price = parseInt($(this).val());
+            if (isNaN(price)) {
+                $('#optimizedPrice').text('');
+                $('#optimizedProfit').text('');
+                return;
+            }
+            const fee=getFee(price);
+            const max_price=optimizePrice(price);
+            $('#optimizedPrice').text(max_price);
+            $('#optimizedProfit').text(price - fee - max_price);
+        });
+    </script>
+</body>
+</html>
