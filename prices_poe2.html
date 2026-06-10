@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static/jquery-3.6.1.min.js"></script>
+    <link href="static/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <title>POE2 物价表</title>
+    <style>
+        body { background-color: #47515c; }
+        .item-img-placeholder {
+            width: 36px; height: 36px;
+            background: #333; border-radius: 4px;
+            display: inline-block;
+        }
+        .item-img {
+            width: 36px; height: 36px;
+            object-fit: contain; border-radius: 4px;
+        }
+        #price-table th { cursor: pointer; user-select: none; white-space: nowrap; }
+        #price-table th:hover { color: #ffc107; }
+        .sort-arrow { font-size: 0.7em; margin-left: 4px; }
+        .value-cell { cursor: default; }
+        .info-label { color: #adb5bd; font-size: 0.9em; }
+        .info-value { color: #e0e0e0; font-weight: 500; }
+        .form-switch .form-check-input { cursor: pointer; }
+        .cat-dropdown-menu { max-height: 320px; overflow-y: auto; min-width: 180px; }
+        .cat-dropdown-menu .form-check { margin: 2px 8px; }
+        .cat-dropdown-menu .btn-group { padding: 4px 8px; }
+        .sparkline-svg { vertical-align: middle; }
+        .price-up { color: #198754; }
+        .price-down { color: #dc3545; }
+    </style>
+</head>
+<body>
+<div class="container-fluid py-3">
+    <h3 class="mb-3" style="color:#e7b478;">POE2 物价表</h3>
+
+    <div class="row g-2 mb-3 align-items-end">
+        <div class="col-auto">
+            <span class="info-label">最后更新时间：</span>
+            <span class="info-value" id="update-time">--</span>
+        </div>
+        <div class="col-auto">
+            <span class="info-label">当前比例：</span>
+            <span class="info-value" id="exchange-rate">--</span>
+        </div>
+    </div>
+
+    <div class="row g-2 mb-3 align-items-center">
+        <div class="col-auto">
+            <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    分类筛选
+                </button>
+                <div class="dropdown-menu cat-dropdown-menu" id="category-filter">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-primary" id="cat-select-all">全选</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary" id="cat-clear-all">清除</button>
+                    </div>
+                    <hr class="dropdown-divider my-1">
+                </div>
+            </div>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="search-input" class="form-control form-control-sm" placeholder="搜索名称..." style="width:200px;">
+        </div>
+        <div class="col-auto">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="img-toggle">
+                <label class="form-check-label text-light" for="img-toggle">加载图片</label>
+            </div>
+        </div>
+        <div class="col-auto">
+            <span class="text-light small" id="item-count"></span>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table id="price-table" class="table table-striped table-dark table-hover table-sm mb-0">
+            <thead>
+                <tr>
+                    <th style="width:46px;">图片</th>
+                    <th data-sort="name">名称 <span class="sort-arrow"></span></th>
+                    <th data-sort="category" style="width:80px;">分类 <span class="sort-arrow"></span></th>
+                    <th data-sort="displayValue" style="width:120px;">价值 <span class="sort-arrow"></span></th>
+                    <th data-sort="maxVolumeCurrency" style="width:100px;">最大交易量 <span class="sort-arrow"></span></th>
+                    <th data-sort="trend" style="width:90px;">趋势 <span class="sort-arrow"></span></th>
+                    <th data-sort="priceChange" style="width:80px;">变动 <span class="sort-arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+const IMAGE_BASE = "https://web.poecdn.com";
+const CURRENCY_CN = { divine: "神圣", exalted: "崇高", chaos: "混沌" };
+
+const SETTINGS_KEY = "poe2_prices_settings";
+const PRICE_CHANGE_TIME = 600;
+const TREND_RANGE = 3 * 24 * 3600;
+
+let loadImage = false;
+let allItems = [];
+let sortKey = "";
+let sortAsc = true;
+let selectedCategories = new Set();
+let savedCategories = null;
+let currentTimestamp = 0;
+
+function loadSettings() {
+    try {
+        let raw = localStorage.getItem(SETTINGS_KEY);
+        if (!raw) return;
+        let s = JSON.parse(raw);
+        if (typeof s.loadImage === "boolean") loadImage = s.loadImage;
+        if (Array.isArray(s.selectedCategories)) savedCategories = new Set(s.selectedCategories);
+    } catch (e) {}
+}
+
+function saveSettings() {
+    try {
+        localStorage.setItem(SETTINGS_KEY, JSON.stringify({
+            loadImage: loadImage,
+            selectedCategories: [...selectedCategories]
+        }));
+    } catch (e) {}
+}
+
+function formatValue(v) {
+    if (v == null) return "-";
+    let av = Math.abs(v);
+    if (av < 0.01) return parseFloat(v.toPrecision(2));
+    if (av < 1) return v.toFixed(3);
+    if (av <= 10) return v.toFixed(2);
+    return v.toFixed(1);
+}
+
+function pickDisplayValue(item) {
+    let map = {
+        divine:  { cn: "神圣", value: item.divineValue },
+        exalted: { cn: "崇高", value: item.exaltedValue },
+        chaos:   { cn: "混沌", value: item.chaosValue }
+    };
+    return map[item.maxVolumeCurrency] || map.exalted;
+}
+
+function buildTooltip(item) {
+    return "神圣: " + formatValue(item.divineValue) +
+           " | 崇高: " + formatValue(item.exaltedValue) +
+           " | 混沌: " + formatValue(item.chaosValue);
+}
+
+function normalizeItem(item) {
+    if ("catagory" in item && !("category" in item)) {
+        item.category = item.catagory;
+        delete item.catagory;
+    }
+    if (!item.category) item.category = "(无分类)";
+    return item;
+}
+
+function getHistoryPoints(item, currentTs, rangeSeconds) {
+    if (!item.history) return [];
+    let points = [];
+    let minTs = currentTs - rangeSeconds;
+    for (let ts in item.history) {
+        let t = parseInt(ts);
+        if (t >= minTs && t <= currentTs) {
+            points.push({ ts: t, divineValue: item.history[ts].divineValue });
+        }
+    }
+    points.sort((a, b) => a.ts - b.ts);
+    return points;
+}
+
+function buildSparklineSVG(points, width, height, currentTs, rangeSeconds) {
+    if (points.length === 0) {
+        return '<svg class="sparkline-svg" width="' + width + '" height="' + height + '"></svg>';
+    }
+    let pad = 2;
+    let w = width - pad * 2;
+    let h = height - pad * 2;
+    let minTs = currentTs - rangeSeconds;
+    let timeSpan = rangeSeconds;
+    if (points.length === 1) {
+        let p = points[0];
+        let x = pad + ((p.ts - minTs) / timeSpan) * w;
+        return '<svg class="sparkline-svg" width="' + width + '" height="' + height + '">' +
+            '<circle cx="' + x.toFixed(1) + '" cy="' + (height / 2).toFixed(1) + '" r="2" fill="#6c757d"/>' +
+            '</svg>';
+    }
+    let vals = points.map(p => p.divineValue);
+    let min = Math.min(...vals);
+    let max = Math.max(...vals);
+    let range = max - min || 1;
+    let coords = points.map(p => {
+        let x = pad + ((p.ts - minTs) / timeSpan) * w;
+        let y = pad + h - ((p.divineValue - min) / range) * h;
+        return x.toFixed(1) + "," + y.toFixed(1);
+    }).join(" ");
+    let last = vals[vals.length - 1];
+    let first = vals[0];
+    let color = last > first ? "#198754" : last < first ? "#dc3545" : "#6c757d";
+    return '<svg class="sparkline-svg" width="' + width + '" height="' + height + '">' +
+        '<polyline points="' + coords + '" fill="none" stroke="' + color + '" stroke-width="1.5"/>' +
+        '</svg>';
+}
+
+function calcPriceChange(item, currentTs, changeSeconds) {
+    if (!item.history) return null;
+    let targetTs = currentTs - changeSeconds;
+    let best = null;
+    for (let ts in item.history) {
+        let t = parseInt(ts);
+        if (t <= targetTs) {
+            if (!best || t > best.ts) best = { ts: t, divineValue: item.history[ts].divineValue };
+        }
+    }
+    if (!best || best.divineValue === 0) return null;
+    let currentVal = item.divineValue;
+    let percent = ((currentVal - best.divineValue) / best.divineValue) * 100;
+    return { percent: percent, direction: percent >= 0 ? "up" : "down" };
+}
+
+function renderImage(item) {
+    if (loadImage) {
+        return '<img class="item-img" src="' + IMAGE_BASE + item.image + '" alt="">';
+    }
+    return '<div class="item-img-placeholder"></div>';
+}
+
+function renderTable(items) {
+    let html = "";
+    for (let item of items) {
+        let dv = pickDisplayValue(item);
+        let tooltip = buildTooltip(item);
+        let points = getHistoryPoints(item, currentTimestamp, TREND_RANGE);
+        let sparkline = buildSparklineSVG(points, 80, 24, currentTimestamp, TREND_RANGE);
+        let change = calcPriceChange(item, currentTimestamp, PRICE_CHANGE_TIME);
+        let changeHtml = "";
+        if (change) {
+            let cls = change.direction === "up" ? "price-up" : "price-down";
+            let sign = change.direction === "up" ? "+" : "";
+            changeHtml = '<span class="' + cls + '">' + sign + change.percent.toFixed(2) + '%</span>';
+        }
+        html += '<tr>' +
+            '<td>' + renderImage(item) + '</td>' +
+            '<td>' + escapeHtml(item.name) + '</td>' +
+            '<td>' + escapeHtml(item.category) + '</td>' +
+            '<td class="value-cell" data-bs-toggle="tooltip" data-bs-placement="top" title="' + escapeHtml(tooltip) + '">' +
+                formatValue(dv.value) + ' ' + dv.cn + '</td>' +
+            '<td>' + (CURRENCY_CN[item.maxVolumeCurrency] || item.maxVolumeCurrency) + '</td>' +
+            '<td>' + sparkline + '</td>' +
+            '<td>' + changeHtml + '</td>' +
+            '</tr>';
+    }
+    $("#table-body").html(html);
+    $("#item-count").text("共 " + items.length + " 项");
+    initTooltips();
+}
+
+function escapeHtml(str) {
+    if (!str) return "";
+    return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function initTooltips() {
+    let el = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    el.forEach(e => { new bootstrap.Tooltip(e, { trigger: "hover" }); });
+}
+
+function applyFilters() {
+    let query = $("#search-input").val().toLowerCase();
+    let filtered = allItems.filter(item => {
+        if (query && !item.name.toLowerCase().includes(query)) return false;
+        if (selectedCategories.size > 0 && !selectedCategories.has(item.category)) return false;
+        return true;
+    });
+    if (sortKey) {
+        filtered.sort((a, b) => {
+            let va, vb;
+            if (sortKey === "displayValue") {
+                va = a.divineValue;
+                vb = b.divineValue;
+            } else if (sortKey === "maxVolumeCurrency") {
+                va = a.maxVolumeCurrency; vb = b.maxVolumeCurrency;
+            } else if (sortKey === "priceChange") {
+                let ca = calcPriceChange(a, currentTimestamp, PRICE_CHANGE_TIME);
+                let cb = calcPriceChange(b, currentTimestamp, PRICE_CHANGE_TIME);
+                va = ca ? ca.percent : -Infinity;
+                vb = cb ? cb.percent : -Infinity;
+            } else if (sortKey === "trend") {
+                let pa = getHistoryPoints(a, currentTimestamp, TREND_RANGE);
+                let pb = getHistoryPoints(b, currentTimestamp, TREND_RANGE);
+                va = pa.length >= 2 ? pa[pa.length - 1].divineValue - pa[0].divineValue : -Infinity;
+                vb = pb.length >= 2 ? pb[pb.length - 1].divineValue - pb[0].divineValue : -Infinity;
+            } else {
+                va = a[sortKey] || ""; vb = b[sortKey] || "";
+            }
+            if (typeof va === "number") return sortAsc ? va - vb : vb - va;
+            return sortAsc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+        });
+    }
+    renderTable(filtered);
+}
+
+function updateCategoryFilter() {
+    let cats = new Set();
+    allItems.forEach(i => { if (i.category) cats.add(i.category); });
+    let $menu = $("#category-filter");
+    $menu.find(".cat-check").remove();
+    selectedCategories.clear();
+    [...cats].sort().forEach(c => {
+        let id = "cat-" + c.replace(/\s+/g, "-");
+        let checked = savedCategories ? savedCategories.has(c) : true;
+        let html = '<div class="form-check cat-check">' +
+            '<input class="form-check-input cat-checkbox" type="checkbox" value="' + escapeHtml(c) + '" id="' + id + '"' + (checked ? ' checked' : '') + '>' +
+            '<label class="form-check-label" for="' + id + '">' + escapeHtml(c) + '</label>' +
+            '</div>';
+        $menu.append(html);
+        if (checked) selectedCategories.add(c);
+    });
+}
+
+$(function () {
+    loadSettings();
+    if (loadImage) $("#img-toggle").prop("checked", true);
+
+    $("#search-input").on("input", applyFilters);
+    $("#img-toggle").on("change", function () {
+        loadImage = this.checked;
+        saveSettings();
+        applyFilters();
+    });
+
+    $(document).on("change", ".cat-checkbox", function() {
+        let val = $(this).val();
+        if (this.checked) selectedCategories.add(val);
+        else selectedCategories.delete(val);
+        saveSettings();
+        applyFilters();
+    });
+    $("#cat-select-all").on("click", function(e) {
+        e.stopPropagation();
+        $(".cat-checkbox").prop("checked", true);
+        selectedCategories.clear();
+        $(".cat-checkbox").each(function() { selectedCategories.add($(this).val()); });
+        saveSettings();
+        applyFilters();
+    });
+    $("#cat-clear-all").on("click", function(e) {
+        e.stopPropagation();
+        $(".cat-checkbox").prop("checked", false);
+        selectedCategories.clear();
+        saveSettings();
+        applyFilters();
+    });
+    $("#price-table thead th[data-sort]").on("click", function () {
+        let key = $(this).data("sort");
+        if (sortKey === key) {
+            sortAsc = !sortAsc;
+        } else {
+            sortKey = key;
+            sortAsc = true;
+        }
+        $("#price-table thead th .sort-arrow").text("");
+        $(this).find(".sort-arrow").text(sortAsc ? "▲" : "▼");
+        applyFilters();
+    });
+
+    $.getJSON("server/prices_poe2.json").then(function(data) {
+        currentTimestamp = data.date;
+        let date = new Date(data.date * 1000);
+        let pad = n => String(n).padStart(2, "0");
+        $("#update-time").text(date.getFullYear() + "-" + pad(date.getMonth()+1) + "-" + pad(date.getDate()) + " " + pad(date.getHours()) + ":" + pad(date.getMinutes()) + ":" + pad(date.getSeconds()));
+        $("#exchange-rate").text("1 神圣 = " + data.rate.exalted + " 崇高 = " + data.rate.chaos + " 混沌");
+
+        for (let key in data.currencies) {
+            let item = normalizeItem(data.currencies[key]);
+            item._key = key;
+            item.displayValue = pickDisplayValue(item).value;
+            allItems.push(item);
+        }
+        updateCategoryFilter();
+        applyFilters();
+    });
+});
+</script>
+</body>
+</html>
