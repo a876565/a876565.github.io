@@ -31,6 +31,8 @@
         .sparkline-svg { vertical-align: middle; }
         .price-up { color: #198754; }
         .price-down { color: #dc3545; }
+        .trend-cell, .change-cell { cursor: pointer; }
+        .trend-cell:hover, .change-cell:hover { background: rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -95,6 +97,28 @@
     </div>
 </div>
 
+<div class="modal fade" id="detail-modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title" id="detail-title"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="detail-chart" class="mb-3 text-center"></div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-dark table-striped mb-0">
+                        <thead>
+                            <tr><th>时间</th><th>神圣</th><th>崇高</th><th>混沌</th></tr>
+                        </thead>
+                        <tbody id="detail-history"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 const IMAGE_BASE = "https://web.poecdn.com";
 const CURRENCY_CN = { divine: "神圣", exalted: "崇高", chaos: "混沌" };
@@ -105,8 +129,8 @@ const TREND_RANGE = 3 * 24 * 3600;
 
 let loadImage = false;
 let allItems = [];
-let sortKey = "";
-let sortAsc = true;
+let sortKey = "displayValue";
+let sortAsc = false;
 let selectedCategories = new Set();
 let savedCategories = null;
 let currentTimestamp = 0;
@@ -164,14 +188,21 @@ function normalizeItem(item) {
 }
 
 function getHistoryPoints(item, currentTs, rangeSeconds) {
-    if (!item.history) return [];
     let points = [];
     let minTs = currentTs - rangeSeconds;
-    for (let ts in item.history) {
-        let t = parseInt(ts);
-        if (t >= minTs && t <= currentTs) {
-            points.push({ ts: t, divineValue: item.history[ts].divineValue });
+    let hasCurrentTs = false;
+    if (item.history) {
+        for (let ts in item.history) {
+            let t = parseInt(ts);
+            if (t >= minTs && t <= currentTs) {
+                let h = item.history[ts];
+                points.push({ ts: t, divineValue: h.divineValue, exaltedValue: h.exaltedValue, chaosValue: h.chaosValue });
+                if (t === currentTs) hasCurrentTs = true;
+            }
         }
+    }
+    if (!hasCurrentTs && currentTs >= minTs) {
+        points.push({ ts: currentTs, divineValue: item.divineValue, exaltedValue: item.exaltedValue, chaosValue: item.chaosValue });
     }
     points.sort((a, b) => a.ts - b.ts);
     return points;
@@ -196,7 +227,15 @@ function buildSparklineSVG(points, width, height, currentTs, rangeSeconds) {
     let vals = points.map(p => p.divineValue);
     let min = Math.min(...vals);
     let max = Math.max(...vals);
-    let range = max - min || 1;
+    let center = (min + max) / 2;
+    let minRange = Math.abs(center);
+    let range = max - min;
+    if (range < minRange) {
+        min = center - minRange / 2;
+        max = center + minRange / 2;
+        range = minRange;
+    }
+    if (range === 0) range = 1;
     let coords = points.map(p => {
         let x = pad + ((p.ts - minTs) / timeSpan) * w;
         let y = pad + h - ((p.divineValue - min) / range) * h;
@@ -226,6 +265,86 @@ function calcPriceChange(item, currentTs, changeSeconds) {
     return { percent: percent, direction: percent >= 0 ? "up" : "down" };
 }
 
+function buildLargeChart(points, width, height, currentTs, rangeSeconds) {
+    let pad = { top: 10, right: 10, bottom: 30, left: 50 };
+    let w = width - pad.left - pad.right;
+    let h = height - pad.top - pad.bottom;
+    let minTs = currentTs - rangeSeconds;
+    let timeSpan = rangeSeconds;
+
+    if (points.length === 0) {
+        return '<svg width="' + width + '" height="' + height + '" viewBox="0 0 ' + width + ' ' + height + '"></svg>';
+    }
+
+    let vals = points.map(p => p.divineValue);
+    let yMin = Math.min(...vals);
+    let yMax = Math.max(...vals);
+    let yCenter = (yMin + yMax) / 2;
+    let yMinRange = Math.abs(yCenter);
+    let yRange = yMax - yMin;
+    if (yRange < yMinRange) {
+        yMin = yCenter - yMinRange / 2;
+        yMax = yCenter + yMinRange / 2;
+        yRange = yMinRange;
+    }
+    if (yRange === 0) yRange = 1;
+
+    function px(ts) { return pad.left + ((ts - minTs) / timeSpan) * w; }
+    function py(v) { return pad.top + h - ((v - yMin) / yRange) * h; }
+
+    let svg = '<svg width="100%" height="' + height + '" viewBox="0 0 ' + width + ' ' + height + '">';
+
+    let daySec = 24 * 3600;
+    for (let i = 0; i <= 3; i++) {
+        let ts = minTs + i * daySec;
+        let x = px(ts);
+        svg += '<line x1="' + x + '" y1="' + pad.top + '" x2="' + x + '" y2="' + (pad.top + h) + '" stroke="#555" stroke-width="0.5"/>';
+        let label = i === 3 ? "现在" : "D-" + (3 - i);
+        svg += '<text x="' + x + '" y="' + (height - 5) + '" text-anchor="middle" fill="#999" font-size="11">' + label + '</text>';
+    }
+
+    svg += '<text x="' + (pad.left - 5) + '" y="' + (py(yMax) + 4) + '" text-anchor="end" fill="#999" font-size="10">' + formatValue(yMax) + '</text>';
+    svg += '<text x="' + (pad.left - 5) + '" y="' + (py(yMin) + 4) + '" text-anchor="end" fill="#999" font-size="10">' + formatValue(yMin) + '</text>';
+    svg += '<line x1="' + pad.left + '" y1="' + pad.top + '" x2="' + pad.left + '" y2="' + (pad.top + h) + '" stroke="#555" stroke-width="0.5"/>';
+
+    if (points.length === 1) {
+        let p = points[0];
+        svg += '<circle cx="' + px(p.ts).toFixed(1) + '" cy="' + py(p.divineValue).toFixed(1) + '" r="3" fill="#6c757d"/>';
+    } else {
+        let coords = points.map(p => px(p.ts).toFixed(1) + "," + py(p.divineValue).toFixed(1)).join(" ");
+        let last = vals[vals.length - 1];
+        let first = vals[0];
+        let color = last > first ? "#198754" : last < first ? "#dc3545" : "#6c757d";
+        svg += '<polyline points="' + coords + '" fill="none" stroke="' + color + '" stroke-width="2"/>';
+    }
+
+    svg += '</svg>';
+    return svg;
+}
+
+function buildHistoryRows(item, currentTs, rangeSeconds) {
+    let points = getHistoryPoints(item, currentTs, rangeSeconds);
+    points.sort((a, b) => b.ts - a.ts);
+    let pad = n => String(n).padStart(2, "0");
+    let html = "";
+    for (let p of points) {
+        let d = new Date(p.ts * 1000);
+        let ds = pad(d.getMonth()+1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes());
+        html += '<tr><td>' + ds + '</td><td>' + formatValue(p.divineValue) + '</td><td>' + formatValue(p.exaltedValue) + '</td><td>' + formatValue(p.chaosValue) + '</td></tr>';
+    }
+    return html;
+}
+
+function showDetail(itemKey) {
+    let item = allItems.find(i => i._key === itemKey);
+    if (!item) return;
+    $("#detail-title").text(item.name);
+    let points = getHistoryPoints(item, currentTimestamp, TREND_RANGE);
+    $("#detail-chart").html(buildLargeChart(points, 600, 200, currentTimestamp, TREND_RANGE));
+    $("#detail-history").html(buildHistoryRows(item, currentTimestamp, TREND_RANGE));
+    new bootstrap.Modal(document.getElementById("detail-modal")).show();
+}
+
 function renderImage(item) {
     if (loadImage) {
         return '<img class="item-img" src="' + IMAGE_BASE + item.image + '" alt="">';
@@ -247,15 +366,15 @@ function renderTable(items) {
             let sign = change.direction === "up" ? "+" : "";
             changeHtml = '<span class="' + cls + '">' + sign + change.percent.toFixed(2) + '%</span>';
         }
-        html += '<tr>' +
+        html += '<tr data-key="' + escapeHtml(item._key) + '">' +
             '<td>' + renderImage(item) + '</td>' +
             '<td>' + escapeHtml(item.name) + '</td>' +
             '<td>' + escapeHtml(item.category) + '</td>' +
             '<td class="value-cell" data-bs-toggle="tooltip" data-bs-placement="top" title="' + escapeHtml(tooltip) + '">' +
                 formatValue(dv.value) + ' ' + dv.cn + '</td>' +
             '<td>' + (CURRENCY_CN[item.maxVolumeCurrency] || item.maxVolumeCurrency) + '</td>' +
-            '<td>' + sparkline + '</td>' +
-            '<td>' + changeHtml + '</td>' +
+            '<td class="trend-cell">' + sparkline + '</td>' +
+            '<td class="change-cell">' + changeHtml + '</td>' +
             '</tr>';
     }
     $("#table-body").html(html);
@@ -371,6 +490,12 @@ $(function () {
         $(this).find(".sort-arrow").text(sortAsc ? "▲" : "▼");
         applyFilters();
     });
+
+    $(document).on("click", ".trend-cell, .change-cell", function() {
+        showDetail($(this).closest("tr").data("key"));
+    });
+
+    $('th[data-sort="displayValue"] .sort-arrow').text("▼");
 
     $.getJSON("server/prices_poe2.json").then(function(data) {
         currentTimestamp = data.date;
