@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屏幕捕获监视工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="toolbar">
+            <button id="btn-start" class="btn btn-primary">开始捕获</button>
+            <button id="btn-stop" class="btn" disabled>停止捕获</button>
+            <button id="btn-select" class="btn" disabled>选择区域</button>
+            <button id="btn-clear" class="btn" disabled>清除区域</button>
+            <button id="btn-match" class="btn" disabled>开始匹配</button>
+        </header>
+
+        <section class="info-panel">
+            <h2>监视目标</h2>
+            <ul id="target-list" class="target-list">
+                <li class="target-item target-upload">
+                    <input type="file" id="target-upload" class="target-upload-input" accept="image/*" multiple>
+                    <label for="target-upload" class="target-upload-label" title="上传监视目标">+</label>
+                </li>
+            </ul>
+        </section>
+
+        <section class="display-area">
+            <canvas id="display-canvas"></canvas>
+            <div id="selection-overlay" class="selection-overlay hidden"></div>
+            <div id="status-bar" class="status-bar">未开始捕获</div>
+        </section>
+    </div>
+
+    <video id="capture-video" class="hidden" autoplay playsinline></video>
+
+    <script src="vendor/opencv.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
