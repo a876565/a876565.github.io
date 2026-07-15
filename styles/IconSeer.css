@@ -66,6 +66,36 @@ body {
     color: #fff;
 }
 
+.toolbar-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    color: #24292f;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.toolbar-toggle:hover {
+    background-color: #f3f4f6;
+    border-color: #afb8c1;
+}
+
+.toolbar-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.toggle-label {
+    cursor: pointer;
+}
+
 .btn-icon {
     padding: 4px 10px;
     font-size: 18px;

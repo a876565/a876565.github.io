@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>屏幕捕获监视工具</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/IconSeer.css">
 </head>
 <body>
     <div class="app">
@@ -14,6 +14,10 @@
             <button id="btn-select" class="btn" disabled>选择区域</button>
             <button id="btn-clear" class="btn" disabled>清除区域</button>
             <button id="btn-match" class="btn" disabled>开始匹配</button>
+            <label class="toolbar-toggle" for="toggle-video" title="开启/关闭视频画面显示">
+                <input type="checkbox" id="toggle-video" checked>
+                <span class="toggle-label">显示视频</span>
+            </label>
         </header>
 
         <section class="info-panel">

@@ -12,6 +12,8 @@ const btnClear = document.getElementById('btn-clear');
 const btnMatch = document.getElementById('btn-match');
 /** @type {HTMLInputElement} */
 const inputUpload = document.getElementById('target-upload');
+/** @type {HTMLInputElement} */
+const toggleVideo = document.getElementById('toggle-video');
 /** @type {HTMLUListElement} */
 const targetList = document.getElementById('target-list');
 /** @type {HTMLCanvasElement} */
@@ -43,6 +45,7 @@ let rafId = null;
 let matchIntervalId = null;
 let elapsedIntervalId = null;
 let isMatchRunning = false;
+let isVideoDisplayEnabled = true; // 是否显示视频画面
 
 /**
  * @typedef {Object} Target
@@ -466,6 +469,17 @@ function stopRenderLoop() {
  * 将当前帧绘制到 canvas
  */
 function renderFrame() {
+    if (!isVideoDisplayEnabled) {
+        // 不渲染视频画面，仅清屏并显示提示，降低资源占用
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#888';
+        ctx.font = '14px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('视频显示已关闭，匹配仍在运行', canvas.width / 2, canvas.height / 2);
+        return;
+    }
+
     if (!selection) {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     } else {
@@ -535,6 +549,19 @@ function drawMatchBox(x, y, w, h) {
 /**
  * 开始/停止模板匹配
  */
+function toggleVideoDisplay() {
+    isVideoDisplayEnabled = toggleVideo.checked;
+    if (!isVideoDisplayEnabled) {
+        overlay.classList.add('hidden');
+        if (stream) {
+            // 立即清屏显示提示
+            renderFrame();
+        }
+    } else if (stream) {
+        renderFrame();
+    }
+}
+
 function toggleMatching() {
     if (isMatching) {
         stopMatching();
@@ -841,6 +868,7 @@ btnSelect.addEventListener('click', toggleSelectionMode);
 btnClear.addEventListener('click', clearSelection);
 btnMatch.addEventListener('click', toggleMatching);
 inputUpload.addEventListener('change', handleTargetUpload);
+toggleVideo.addEventListener('change', toggleVideoDisplay);
 
 // 页面卸载时清理
 window.addEventListener('beforeunload', () => {
