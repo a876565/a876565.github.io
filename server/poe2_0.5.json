@@ -1,0 +1,22 @@
+{
+    "game_version": "poe2",
+    "league": "Runes of Aldur",
+    "items": [
+    ],
+    "currencies": [
+        'Currency',
+        'Fragments',
+        'Abyss',
+        'UncutGems',
+        'LineageSupportGems',
+        'Essences',
+        'SoulCores',
+        'Idols',
+        'Runes',
+        'Ritual',
+        'Expedition',
+        'Delirium',
+        'Breach',
+        'Verisium'
+    ]
+}

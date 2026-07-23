@@ -20,67 +20,65 @@ MIN_DOWNLOAD_INTERVAL = 600
 ITEM_PATH='https://poe.ninja/{game_version}/api/economy/stash/current/item/overview?league={league}&type={item_type}'
 CURRENCIES_PATH='https://poe.ninja/{game_version}/api/economy/exchange/current/overview?league={league}&type={item_type}'
 
-#Game settings
+#Default settings per game version
+GAME_PRESETS = {
+    'poe1': {
+        'data_folder': 'data',
+        'backup_folder': 'backup',
+        'price_folder': 'prices',
+        'items': [
+        ],
+        'currencies': [
+            'Currency',
+        ],
+    },
+    'poe2': {
+        'data_folder': 'data2',
+        'backup_folder': 'backup2',
+        'price_folder': 'prices2',
+        'items': [],
+        'currencies': [
+            'Currency',
+        ],
+    },
+}
+
+#Load settings from a JSON config file (see config.example.json)
 parser = argparse.ArgumentParser(description='Update POE prices from poe.ninja')
-parser.add_argument('--game-version', '-g', choices=['poe1', 'poe2'], default='poe1',
-                    help='Game version (default: poe1)')
-parser.add_argument('--league', '-l', required=True,
-                    help='League name (e.g. "Ancestors" or "Standard")')
+parser.add_argument('config',
+                    help='Path to a JSON config file (e.g. config.poe1.json)')
+parser.add_argument('--force', '-f', action='store_true',
+                    help='Skip all cache checks and force an update')
 args = parser.parse_args()
 
-GAME_VERSION = args.game_version
-LEAGUE = args.league
+FORCE = args.force
+
+with open(args.config, 'r', encoding='utf-8') as f:
+    config = json.load(f)
+
+GAME_VERSION = config.get('game_version', 'poe1')
+if GAME_VERSION not in GAME_PRESETS:
+    print('Unknown game version', GAME_VERSION)
+    exit(-1)
+LEAGUE = config.get('league')
+if not LEAGUE:
+    print('Missing "league" in config file')
+    exit(-1)
+
+#Optional settings can override the defaults/presets
+preset = GAME_PRESETS[GAME_VERSION]
+FETCH_INTERVAL = config.get('fetch_interval', FETCH_INTERVAL)
+MAX_HISTORY = config.get('max_history', MAX_HISTORY)
+RETRY_COUNT = config.get('retry_count', RETRY_COUNT)
+MIN_DOWNLOAD_INTERVAL = config.get('min_download_interval', MIN_DOWNLOAD_INTERVAL)
+DATA_FOLDER = config.get('data_folder', preset['data_folder'])
+BACKUP_FOLDER = config.get('backup_folder', preset['backup_folder'])
+PRICE_FOLDER = config.get('price_folder', preset['price_folder'])
+ITEMS = config.get('items', preset['items'])
+CURRENCIES = config.get('currencies', preset['currencies'])
 
 print(f'GAME_VERSION={GAME_VERSION}')
 print(f'LEAGUE={LEAGUE}')
-if GAME_VERSION=='poe1':
-    DATA_FOLDER='data'
-    BACKUP_FOLDER='backup'
-    PRICE_FOLDER='prices'
-    ITEMS=[
-        'UniqueAccessory',
-        'UniqueArmour',
-        'UniqueFlask',
-        'UniqueJewel',
-        'UniqueWeapon',
-    ]
-    CURRENCIES=[
-        'Currency',
-        'Fragment',
-        'Tattoo',
-        'Omen',
-        'DjinnCoin',
-        'DivinationCard',
-        'Oil',
-        'Scarab',
-    ]
-elif GAME_VERSION=='poe2':
-    DATA_FOLDER='data2'
-    BACKUP_FOLDER='backup2'
-    PRICE_FOLDER='prices2'
-    ITEMS=[
-    ]
-    CURRENCIES=[
-        'Currency',
-        'Fragments',
-        'Abyss',
-        'UncutGems',
-        'LineageSupportGems',
-        'Essences',
-        'SoulCores',
-        'Idols',
-        'Runes',
-        'Ritual',
-        'Expedition',
-        'Delirium',
-        'Breach',
-        'Verisium',
-    ]
-    ITEMS=[
-	]
-else:
-    print('Unknown game version',GAME_VERSION)
-    exit(-1)
     
 def download_url_to_file(url: str, dest_path: str | None = None, chunk_size: int = 8192, timeout: int = 10, session: requests.Session|None = None):
     """
@@ -139,6 +137,9 @@ def backup_data(timestamp: int) -> None:
     os.makedirs(BACKUP_FOLDER, exist_ok=True)
     
     with ZipFile(f'{BACKUP_FOLDER}/prices_{timestamp}.zip', 'w') as zf:
+        index_path = f'prices_{GAME_VERSION}.json'
+        if os.path.exists(index_path):
+            zf.write(index_path, index_path)
         for i in CURRENCIES + ITEMS:
             data_path = f'{DATA_FOLDER}/{i}.json'
             price_path = f'{PRICE_FOLDER}/{i}.json'
@@ -162,9 +163,6 @@ def load_history_from_backups(current_time: int) -> dict[str, dict[str, dict[str
         except ValueError:
             continue
         
-        if current_time - timestamp >= MAX_HISTORY:
-            continue
-        
         filepath = os.path.join(BACKUP_FOLDER, filename)
         try:
             with ZipFile(filepath, 'r') as zf:
@@ -180,13 +178,16 @@ def load_history_from_backups(current_time: int) -> dict[str, dict[str, dict[str
                         if item_id not in history[i]:
                             history[i][item_id] = {}
                         # Add current values at backup timestamp
-                        history[i][item_id][str(timestamp)] = {
-                            'divineValue': item_data.get('divineValue', 0),
-                            'exaltedValue': item_data.get('exaltedValue', 0),
-                            'chaosValue': item_data.get('chaosValue', 0),
-                        }
+                        if current_time - timestamp < MAX_HISTORY:
+                            history[i][item_id][str(timestamp)] = {
+                                'divineValue': item_data.get('divineValue', 0),
+                                'exaltedValue': item_data.get('exaltedValue', 0),
+                                'chaosValue': item_data.get('chaosValue', 0),
+                            }
                         # Also preserve nested history from the backup
                         for hist_ts, hist_values in item_data.get('history', {}).items():
+                            if current_time - int(hist_ts) >= MAX_HISTORY:
+                                continue
                             history[i][item_id][hist_ts] = {
                                 'divineValue': hist_values.get('divineValue', 0),
                                 'exaltedValue': hist_values.get('exaltedValue', 0),
@@ -196,28 +197,6 @@ def load_history_from_backups(current_time: int) -> dict[str, dict[str, dict[str
             continue
     
     return history
-
-def cleanup_old_backups(current_time: int) -> None:
-    if not os.path.exists(BACKUP_FOLDER):
-        return
-    
-    for filename in os.listdir(BACKUP_FOLDER):
-        if not filename.endswith('.zip'):
-            continue
-        
-        ts_str = filename[filename.rfind('_')+1:-4]
-        try:
-            timestamp = int(ts_str)
-        except ValueError:
-            continue
-        
-        if current_time - timestamp >= MAX_HISTORY:
-            filepath = os.path.join(BACKUP_FOLDER, filename)
-            try:
-                os.remove(filepath)
-                print(f'Removed old backup {filename}')
-            except Exception:
-                pass
 
 def merge_history(items: dict, backup_history: dict[str, dict[str, dict]], 
                   current_prices: dict[str, dict], old_timestamp: int,
@@ -343,7 +322,7 @@ def write_price_index() -> None:
     print(f'Wrote price index to {index_path}')
 
 print('Checking cache...')
-if not is_cache_valid():
+if FORCE or not is_cache_valid():
     current_time = int(time.time())
     
     print('Updating prices...')
@@ -370,7 +349,7 @@ if not is_cache_valid():
         content=None
 
         #load cache if possible
-        if os.path.exists(dest_path):
+        if not FORCE and os.path.exists(dest_path):
             file_age = time.time() - os.path.getmtime(dest_path)
             if file_age < MIN_DOWNLOAD_INTERVAL:
                 print(f'Skipping {i}, file age {file_age:.0f}s < {MIN_DOWNLOAD_INTERVAL}s.')
@@ -400,13 +379,10 @@ if not is_cache_valid():
         with open(price_path,'w') as f:
             json.dump(data,f,indent=4)
     
+    print('Writing price index...')
+    write_price_index()
+    
     print('Backing up data...')
     backup_data(current_time)
-    
-    print('Cleaning up old backups...')
-    cleanup_old_backups(current_time)
 else:
     print('Cache is still valid, skipping update.')
-
-print('Writing price index...')
-write_price_index()

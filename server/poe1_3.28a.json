@@ -1,0 +1,24 @@
+{
+    "game_version": "poe1",
+    "league": "Ancestors",
+    "data_folder": "data",
+    "backup_folder": "backup",
+    "price_folder": "prices",
+    "items": [
+        "UniqueAccessory",
+        "UniqueArmour",
+        "UniqueFlask",
+        "UniqueJewel",
+        "UniqueWeapon"
+    ],
+    "currencies": [
+        "Currency",
+        "Fragment",
+        "Tattoo",
+        "Omen",
+        "DjinnCoin",
+        "DivinationCard",
+        "Oil",
+        "Scarab"
+    ]
+}
