@@ -1,102 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="static/jquery-3.6.1.min.js"></script>
-    <script src="static/react.development.js"></script>
-    <script src="static/react-dom.development.js"></script>
-    <link href="static/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="static/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-    <title>Fee Optimizer</title>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞拍最优出价计算器</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+  }
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .input-row label {
+    font-size: 14px;
+    color: #6e6e73;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .input-row input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #d2d2d7;
+    border-radius: 10px;
+    background: #fff;
+    color: #1d1d1f;
+    font-variant-numeric: tabular-nums;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .input-row input:focus {
+    border-color: #1d1d1f;
+  }
+  .input-row button {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background: #1d1d1f;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .input-row button:hover {
+    opacity: 0.85;
+  }
+  .result-panel {
+    background: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .result-panel .panel-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8e8e93;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #f2f2f7;
+  }
+  .metric-row:last-child {
+    border-bottom: none;
+  }
+  .metric-label {
+    font-size: 14px;
+    color: #6e6e73;
+  }
+  .metric-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d1d1f;
+    font-variant-numeric: tabular-nums;
+  }
+  .metric-value.highlight {
+    font-size: 24px;
+  }
+  .metric-value.positive {
+    color: #34c759;
+  }
+  .metric-value.negative {
+    color: #ff3b30;
+  }
+  .metric-value.accent {
+    color: #007aff;
+  }
+  .comparison-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .comparison-card {
+    background: #fafafa;
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .comparison-card .card-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8e8e93;
+    margin-bottom: 10px;
+  }
+  .comparison-card .card-value {
+    font-size: 22px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 4px;
+  }
+  .comparison-card .card-sub {
+    font-size: 12px;
+    color: #c7c7cc;
+  }
+  .deterred-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .deterred-yes {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  .deterred-no {
+    background: #ffebee;
+    color: #c62828;
+  }
+  .formula-bar {
+    font-size: 12px;
+    color: #8e8e93;
+    padding: 12px 16px;
+    background: #f5f5f7;
+    border-radius: 8px;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .formula-bar code {
+    font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+    font-size: 11px;
+    color: #6e6e73;
+    background: #e5e5ea;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #c7c7cc;
+    font-size: 14px;
+  }
+  .preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .preset-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    background: #fff;
+    color: #1d1d1f;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .preset-btn:hover {
+    background: #1d1d1f;
+    color: #fff;
+    border-color: #1d1d1f;
+  }
+  .dark-mode-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    background: #fff;
+    color: #1d1d1f;
+    cursor: pointer;
+    z-index: 100;
+  }
+</style>
 </head>
 <body>
-    <h2>Fee Optimizer</h2>
-    <div class="input-group mb-3">
-        <input type="number" id="feeInput" class="form-control" placeholder="Enter fee amount">
-        <select id="personNum" class="form-select">
-            <option value="4">4 persons</option>
-            <option value="8">8 persons</option>
-        </select>
-    </div>
-    <div class="text-md-start">Optimized price: <span id="optimizedPrice"></span></div>
-    <div class="text-md-start">Profit: <span id="optimizedProfit"></span></div>
-    <script>
-        const fees=[
-            { amount: 1000, fee: 75},
-            { amount: 2000, fee: 125},
-            { amount: 3000, fee: 175},
-            { amount: 4000, fee: 225},
-            { amount: 5000, fee: 275},
-            { amount: 6000, fee: 325},
-            { amount: 7000, fee: 375},
-            { amount: 8000, fee: 425},
-            { amount: 9000, fee: 475},
-            { amount: 10000, fee: 750},
-            { amount: 20000, fee: 1250},
-            { amount: 30000, fee: 1750},
-            { amount: 40000, fee: 2250},
-            { amount: 50000, fee: 2750},
-            { amount: 60000, fee: 3250},
-            { amount: 70000, fee: 3750},
-            { amount: 80000, fee: 4250},
-            { amount: 90000, fee: 4750},
-            { amount: 100000, fee: 7500},
-            { amount: 200000, fee: 12500},
-            { amount: 300000, fee: 17500},
-            { amount: 400000, fee: 22500},
-            { amount: 500000, fee: 27500},
-            { amount: 600000, fee: 32500},
-            { amount: 700000, fee: 37500},
-            { amount: 800000, fee: 42500},
-            { amount: 900000, fee: 47500},
-            { amount: 1000000, fee: 75000},
-            { amount: 2000000, fee: 125000},
-            { amount: 3000000, fee: 175000},
-            { amount: 4000000, fee: 225000},
-            { amount: 5000000, fee: 275000},
-            { amount: 6000000, fee: 325000},
-            { amount: 7000000, fee: 375000},
-            { amount: 8000000, fee: 425000},
-            { amount: 9000000, fee: 475000},
-        ];
 
-        function getFee(price) {
-            for (let i = fees.length - 1; i >= 0; i--) {
-                if (price >= fees[i].amount) {
-                    return fees[i].fee;
-                }
-            }
-            return 0;
-        }
+<button class="dark-mode-toggle" onclick="toggleDark()">🌙 深色</button>
 
-        function optimizePrice(price) {
-            const fee = getFee(price);
-            const personNum = parseInt($('#personNum').val());
-            let max_price = 0;
-            for (let x = 1000; x < price; x += 1) {
-                let profit_sell = price - fee - x;
-                let profit_splits = Math.floor(Math.floor(x * 1.1) / (personNum-1));
-                if (profit_sell > profit_splits) {
-                    max_price = x;
-                }
-            }
-            return max_price;
-        }
+<div class="container">
+  <h1>竞拍最优出价计算器</h1>
+  
+  <div class="preset-buttons">
+    <button class="preset-btn" onclick="setPrice(1000)">1,000</button>
+    <button class="preset-btn" onclick="setPrice(10000)">10,000</button>
+    <button class="preset-btn" onclick="setPrice(50000)">50,000</button>
+    <button class="preset-btn" onclick="setPrice(100000)">100,000</button>
+    <button class="preset-btn" onclick="setPrice(500000)">500,000</button>
+    <button class="preset-btn" onclick="setPrice(1000000)">1,000,000</button>
+    <button class="preset-btn" onclick="setPrice(5000000)">5,000,000</button>
+  </div>
+  
+  <div class="input-row">
+    <label>货物价格 P</label>
+    <input type="number" id="priceInput" placeholder="输入货物出售价格..." value="100000" min="1">
+    <button onclick="calculate()">计算</button>
+  </div>
+  
+  <div id="results"></div>
+</div>
 
-        $('#feeInput').on('input', function() {
-            const price = parseInt($(this).val());
-            if (isNaN(price)) {
-                $('#optimizedPrice').text('');
-                $('#optimizedProfit').text('');
-                return;
-            }
-            const fee=getFee(price);
-            const max_price=optimizePrice(price);
-            $('#optimizedPrice').text(max_price);
-            $('#optimizedProfit').text(price - fee - max_price);
-        });
-    </script>
+<script>
+function calcFee(P) {
+  if (P < 10000) return P * 0.05 + 25;
+  if (P < 100000) return P * 0.05 + 250;
+  if (P < 1000000) return P * 0.05 + 2500;
+  return P * 0.05 + 25000;
+}
+
+function findOptimalBid(P) {
+  const fee = calcFee(P);
+  const N = P - fee;
+  for (let B = 1; B <= Math.floor(N); B++) {
+    const Bnext = Math.ceil(B * 1.1);
+    const cond1 = (N - Bnext) < (Bnext / 7);
+    const cond2 = (N - B) >= (B / 7);
+    if (cond1 && cond2) return { B, N, fee, Bnext };
+  }
+  return null;
+}
+
+function fmt(n) {
+  return n.toLocaleString("zh-CN", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+}
+
+function setPrice(v) {
+  document.getElementById("priceInput").value = v;
+  calculate();
+}
+
+function calculate() {
+  const P = parseFloat(document.getElementById("priceInput").value);
+  const container = document.getElementById("results");
+  
+  if (!P || P <= 0) {
+    container.innerHTML = '<div class="empty-state">请输入有效的货物价格</div>';
+    return;
+  }
+  
+  const result = findOptimalBid(P);
+  if (!result) {
+    container.innerHTML = '<div class="empty-state">该价格下无最优出价（博弈无解）</div>';
+    return;
+  }
+  
+  const B = result.B, N = result.N, fee = result.fee, Bnext = result.Bnext;
+  const yourProfit = N - B;
+  const yourBystander = B / 7;
+  const nextWinner = N - Bnext;
+  const nextBystander = Bnext / 7;
+  const deterred = nextWinner < nextBystander;
+  
+  let html = '<div class="result-panel">';
+  html += '<div class="panel-title">核心结果</div>';
+  html += '<div class="metric-row"><span class="metric-label">货物价格 P</span><span class="metric-value">' + fmt(P) + '</span></div>';
+  html += '<div class="metric-row"><span class="metric-label">手续费 fee</span><span class="metric-value">' + fmt(fee) + '</span></div>';
+  html += '<div class="metric-row"><span class="metric-label">净利润 N = P &minus; fee</span><span class="metric-value accent">' + fmt(N) + '</span></div>';
+  html += '<div class="metric-row"><span class="metric-label">最优出价 B</span><span class="metric-value highlight">' + fmt(B) + '</span></div>';
+  html += '<div class="metric-row"><span class="metric-label">你的净赚 = N &minus; B</span><span class="metric-value highlight positive">+' + fmt(yourProfit) + '</span></div>';
+  html += '<div class="metric-row"><span class="metric-label">你作为旁观者分得 = B/7</span><span class="metric-value">' + fmt(yourBystander) + '</span></div>';
+  html += '</div>';
+  
+  html += '<div class="result-panel">';
+  html += '<div class="panel-title">下一个人若竞拍</div>';
+  html += '<div class="comparison-panel">';
+  html += '<div class="comparison-card">';
+  html += '<div class="card-title">作为成功者</div>';
+  html += '<div class="card-value ' + (nextWinner >= 0 ? 'positive' : 'negative') + '">' + (nextWinner >= 0 ? '+' : '') + fmt(nextWinner) + '</div>';
+  html += '<div class="card-sub">净赚 = N &minus; ' + fmt(Bnext) + '</div>';
+  html += '</div>';
+  html += '<div class="comparison-card">';
+  html += '<div class="card-title">作为旁观者</div>';
+  html += '<div class="card-value accent">+' + fmt(nextBystander) + '</div>';
+  html += '<div class="card-sub">分得 = ' + fmt(Bnext) + '/7</div>';
+  html += '</div>';
+  html += '</div>';
+  html += '<div class="deterred-badge ' + (deterred ? 'deterred-yes' : 'deterred-no') + '">';
+  html += deterred ? '&#10003; 下家被劝退（成功者赚 &lt; 旁观者分得）' : '&#10007; 下家愿意竞拍';
+  html += '</div>';
+  html += '</div>';
+  
+  html += '<div class="formula-bar">';
+  html += '<strong>推导公式</strong><br>';
+  html += '最优出价区间：<code>35N/44 &lt; B &le; 7N/8</code>（即 <code>0.795N &lt; B &le; 0.875N</code>）<br>';
+  html += '你的净赚 &asymp; <code>N &times; 9/44 &asymp; N &times; 0.2045</code>，其他7人每人分得 &asymp; <code>N &times; 5/44 &asymp; N &times; 0.1136</code>';
+  html += '</div>';
+  
+  container.innerHTML = html;
+}
+
+function toggleDark() {
+  const isDark = document.body.style.background === "rgb(28, 28, 30)";
+  if (isDark) {
+    document.body.style.background = "#f5f5f7";
+    document.body.style.color = "#1d1d1f";
+    document.querySelector("h1").style.color = "#1d1d1f";
+    document.querySelectorAll(".result-panel").forEach(function(el) { el.style.background = "#fff"; el.style.borderColor = "#e5e5ea"; });
+    document.querySelectorAll(".comparison-card").forEach(function(el) { el.style.background = "#fafafa"; el.style.borderColor = "#e5e5ea"; });
+    document.querySelectorAll(".formula-bar").forEach(function(el) { el.style.background = "#f5f5f7"; });
+    document.querySelectorAll("input").forEach(function(el) { el.style.background = "#fff"; el.style.borderColor = "#d2d2d7"; el.style.color = "#1d1d1f"; });
+    document.querySelectorAll(".preset-btn").forEach(function(el) { el.style.background = "#fff"; el.style.color = "#1d1d1f"; el.style.borderColor = "#d2d2d7"; });
+    document.querySelector(".dark-mode-toggle").textContent = "🌙 深色";
+    document.querySelector(".dark-mode-toggle").style.background = "#fff";
+    document.querySelector(".dark-mode-toggle").style.color = "#1d1d1f";
+  } else {
+    document.body.style.background = "#1c1c1e";
+    document.body.style.color = "#f5f5f7";
+    document.querySelector("h1").style.color = "#f5f5f7";
+    document.querySelectorAll(".result-panel").forEach(function(el) { el.style.background = "#2c2c2e"; el.style.borderColor = "#3a3a3c"; });
+    document.querySelectorAll(".comparison-card").forEach(function(el) { el.style.background = "#2c2c2e"; el.style.borderColor = "#3a3a3c"; });
+    document.querySelectorAll(".formula-bar").forEach(function(el) { el.style.background = "#2c2c2e"; });
+    document.querySelectorAll("input").forEach(function(el) { el.style.background = "#2c2c2e"; el.style.borderColor = "#3a3a3c"; el.style.color = "#f5f5f7"; });
+    document.querySelectorAll(".preset-btn").forEach(function(el) { el.style.background = "#2c2c2e"; el.style.color = "#f5f5f7"; el.style.borderColor = "#3a3a3c"; });
+    document.querySelector(".dark-mode-toggle").textContent = "☀️ 浅色";
+    document.querySelector(".dark-mode-toggle").style.background = "#2c2c2e";
+    document.querySelector(".dark-mode-toggle").style.color = "#f5f5f7";
+  }
+}
+
+// 初始计算
+calculate();
+
+// 回车触发
+document.getElementById("priceInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") calculate();
+});
+</script>
+
 </body>
 </html>
