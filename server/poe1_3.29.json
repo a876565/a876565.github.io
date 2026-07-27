@@ -1,0 +1,28 @@
+{
+    "game_version": "poe1",
+    "league": "Allflame",
+    "data_folder": "data",
+    "backup_folder": "backup",
+    "price_folder": "prices",
+    "items": [
+        "UniqueAccessory",
+        "UniqueArmour",
+        "UniqueFlask",
+        "UniqueJewel",
+        "UniqueWeapon",
+		"Wombgift"
+    ],
+    "currencies": [
+        "Currency",
+        "Fragment",
+        "Tattoo",
+        "Omen",
+        "DivinationCard",
+        "Oil",
+        "Scarab",
+		"AllflameEmber",
+		"Runegraft",
+		"Ducat",
+		"EnshroudingCrystal"
+    ]
+}
