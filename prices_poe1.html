@@ -266,7 +266,7 @@ function buildSparklineSVG(points, width, height, currentTs, rangeSeconds) {
         let y = pad + h - ((p.divineValue - min) / range) * h;
         return x.toFixed(1) + "," + y.toFixed(1);
     }).join(" ");
-    let color = trendColor(points, currentTs, PRICE_CHANGE_TIME);
+    let color = trendColor(points, currentTs, PRICE_CHANGE_4H);
     return '<svg class="sparkline-svg" width="' + width + '" height="' + height + '">' +
         '<polyline points="' + coords + '" fill="none" stroke="' + color + '" stroke-width="1.5"/>' +
         '</svg>';
@@ -349,7 +349,7 @@ function buildLargeChart(points, width, height, currentTs, rangeSeconds) {
         svg += '<circle cx="' + px(p.ts).toFixed(1) + '" cy="' + py(p.divineValue).toFixed(1) + '" r="3" fill="#6c757d"/>';
     } else {
         let coords = points.map(p => px(p.ts).toFixed(1) + "," + py(p.divineValue).toFixed(1)).join(" ");
-        let color = trendColor(points, currentTs, PRICE_CHANGE_TIME);
+        let color = trendColor(points, currentTs, PRICE_CHANGE_4H);
         svg += '<polyline points="' + coords + '" fill="none" stroke="' + color + '" stroke-width="2"/>';
     }
 

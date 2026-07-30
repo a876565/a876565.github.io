@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static/jquery-3.6.1.min.js"></script>
+    <link href="static/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <title>正则优化工具</title>
+    <style>
+        body { background-color: #47515c; }
+        #regex-output {
+            background-color: #212529; color: #e0e0e0;
+            font-family: Consolas, "Courier New", monospace;
+            resize: none;
+        }
+        #regex-output::placeholder { color: #6c757d; }
+        #sidebar { min-width: 150px; }
+        #sidebar .list-group-item { cursor: pointer; }
+        #sidebar.collapsed { min-width: 0; width: 0; padding-left: 0; padding-right: 0; overflow: hidden; }
+        #sidebar.collapsed > * { display: none; }
+        #sidebar-expand {
+            position: fixed; top: 70px; left: 0; z-index: 1050;
+            display: none; width: auto;
+            padding: 8px 7px 8px 4px;
+            border-radius: 0 6px 6px 0;
+            background: #2b3035; color: #adb5bd;
+            border: 1px solid #495057; border-left: none;
+            line-height: 1;
+        }
+        #sidebar-expand:hover { color: #fff; background: #343a40; }
+        #item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 200px);
+            gap: 6px;
+        }
+        .grid-cell {
+            width: 200px;
+            display: flex; align-items: center; gap: 6px;
+            padding: 5px 6px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 5px;
+            background: transparent;
+            cursor: pointer; user-select: none;
+        }
+        .grid-cell:hover { border-color: rgba(255,255,255,.45); }
+        .grid-cell.selected { background: rgba(13,110,253,.35); border-color: #0d6efd; }
+        .cell-icon { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+        .cell-text {
+            font-size: .82em; line-height: 1.25; color: #e0e0e0;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; word-break: break-word;
+        }
+        .cell-price { color: #9db2c8; }
+        .info-label { color: #adb5bd; font-size: 0.9em; }
+        .info-value { color: #e0e0e0; font-weight: 500; }
+        .range-input { width: 72px; }
+    </style>
+</head>
+<body>
+<div class="container-fluid py-3">
+    <button type="button" id="sidebar-expand" title="展开分类">▸</button>
+    <div class="row">
+        <div class="col-auto" id="sidebar">
+            <div class="d-flex align-items-center mb-2">
+                <span class="text-light fw-bold me-2">分类</span>
+                <button class="btn btn-sm btn-outline-secondary" id="sidebar-toggle" title="折叠分类">◂</button>
+            </div>
+            <div class="list-group list-group-flush" id="cat-list"></div>
+        </div>
+        <div class="col">
+            <h3 class="mb-3" style="color:#e7b478;">正则优化工具</h3>
+
+            <div class="mb-2">
+                <textarea id="regex-output" class="form-control" rows="3" readonly placeholder="选择甲虫后自动生成正则表达式"></textarea>
+            </div>
+            <div class="mb-3 d-flex align-items-center">
+                <button class="btn btn-sm btn-primary" id="copy-btn">复制</button>
+                <span class="info-label ms-3" id="regex-len"></span>
+            </div>
+
+            <div class="row g-2 mb-2 align-items-center">
+                <div class="col-auto">
+                    <input type="number" id="range-min" class="form-control form-control-sm range-input" placeholder="最低价" step="any">
+                </div>
+                <div class="col-auto text-light">~</div>
+                <div class="col-auto">
+                    <input type="number" id="range-max" class="form-control form-control-sm range-input" placeholder="最高价" step="any">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-sm btn-outline-primary" id="range-select">选择</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-sm btn-outline-secondary" id="range-clear">清除</button>
+                </div>
+                <div class="col-auto">
+                    <span class="info-label" id="sel-count"></span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <small class="text-light" id="load-status">加载中...</small>
+            </div>
+
+            <div id="item-grid"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// 分类配置：目前仅 Scarab，后续可扩展
+const CATEGORIES = [
+    { key: "scarab", label: "Scarab", url: "server/prices/Scarab.json" }
+];
+
+let items = [];          // {_key, name, lower, chaosValue}
+let subToNames = null;   // Map: 子串 -> [包含它的 item 下标]
+let selected = new Set();// 选中的 _key
+let activeCategory = null;
+
+function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+function escapeHtml(str) {
+    if (!str) return "";
+    return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function formatValue(v) {
+    if (v == null) return "-";
+    let av = Math.abs(v);
+    if (av < 0.01) return parseFloat(v.toPrecision(2));
+    if (av < 1) return v.toFixed(3);
+    if (av <= 10) return v.toFixed(2);
+    return v.toFixed(1);
+}
+
+// ---- 正则计算 ----
+
+function buildSubstrings() {
+    subToNames = new Map();
+    items.forEach((item, idx) => {
+        const name = item.lower;
+        const seen = new Set();
+        for (let i = 0; i < name.length; i++) {
+            for (let j = i + 1; j <= name.length; j++) {
+                const sub = name.slice(i, j);
+                if (seen.has(sub)) continue;
+                seen.add(sub);
+                if (!subToNames.has(sub)) subToNames.set(sub, []);
+                subToNames.get(sub).push(idx);
+            }
+        }
+    });
+}
+
+// 贪心集合覆盖：最短的子串组合，匹配全部选中项、排除全部未选项
+function computeRegex() {
+    const selIdxs = new Set();
+    items.forEach((it, i) => { if (selected.has(it._key)) selIdxs.add(i); });
+    if (selIdxs.size === 0) return "";
+
+    const negJoined = "\0" + items.filter((_, i) => !selIdxs.has(i)).map(it => it.lower).join("\0") + "\0";
+
+    // 合法候选：不出现在任何未选项名称中（一次性过滤）
+    const valid = [];
+    for (const [sub, idxs] of subToNames) {
+        if (negJoined.indexOf(sub) === -1) valid.push([sub, idxs]);
+    }
+
+    const uncovered = new Set(selIdxs);
+    const chosen = [];
+    while (uncovered.size > 0) {
+        let best = null, bestScore = Infinity, bestCnt = 0;
+        for (const [sub, idxs] of valid) {
+            let cnt = 0;
+            for (const i of idxs) if (uncovered.has(i)) cnt++;
+            if (cnt === 0) continue;
+            const score = sub.length / cnt;
+            if (score < bestScore || (score === bestScore && cnt > bestCnt)) {
+                best = sub; bestScore = score; bestCnt = cnt;
+            }
+        }
+        if (!best) {
+            // 兜底：选中项是未选项的子串（如 "Ambush Scarab" vs "Ambush Scarab of Potency"）
+            // 用锚定候选（name$ / ^name / ^name$）逐个处理剩余正例
+            const negIdxs = items.map((_, j) => j).filter(j => !selIdxs.has(j));
+            for (const i of [...uncovered]) {
+                const nm = escapeRe(items[i].lower);
+                let done = false;
+                for (const v of [nm + "$", "^" + nm, "^" + nm + "$"]) {
+                    const re = new RegExp(v, "i");
+                    if (re.test(items[i].lower) && negIdxs.every(j => !re.test(items[j].lower))) {
+                        chosen.push(v);
+                        uncovered.delete(i);
+                        done = true;
+                        break;
+                    }
+                }
+                if (!done) console.error("无法区分: " + items[i].name);
+            }
+            break;
+        }
+        chosen.push(escapeRe(best));
+        for (const i of subToNames.get(best)) uncovered.delete(i);
+    }
+    return chosen.join("|");
+}
+
+function updateRegex() {
+    const re = computeRegex();
+    $("#regex-output").val(re);
+    $("#regex-len").text(re ? "长度 " + re.length + " 字符" : "");
+    $("#sel-count").text("已选 " + selected.size + " / 共 " + items.length);
+}
+
+// ---- 渲染 ----
+
+function getImageUrl(item) {
+    if (!item.image) return "";
+    if (item.image.startsWith("http://") || item.image.startsWith("https://")) return item.image;
+    return "https://web.poecdn.com" + item.image;
+}
+
+function renderTable() {
+    let html = "";
+    for (const item of items) {
+        const cls = selected.has(item._key) ? "grid-cell selected" : "grid-cell";
+        const imgUrl = getImageUrl(item);
+        const img = imgUrl ? '<img class="cell-icon" loading="lazy" src="' + escapeHtml(imgUrl) + '" alt="">' : "";
+        html += '<div class="' + cls + '" data-key="' + escapeHtml(item._key) + '">' +
+            img +
+            '<div class="cell-text">' + escapeHtml(item.name) +
+            ' <span class="cell-price">(' + formatValue(item.chaosValue) + ")</span></div>" +
+            "</div>";
+    }
+    $("#item-grid").html(html);
+}
+
+function renderCategoryList() {
+    let html = "";
+    for (const cat of CATEGORIES) {
+        const active = activeCategory === cat.key ? " active" : "";
+        html += '<button type="button" class="list-group-item list-group-item-action list-group-item-dark' + active +
+            '" data-cat="' + cat.key + '">' + escapeHtml(cat.label) + "</button>";
+    }
+    $("#cat-list").html(html);
+}
+
+async function loadCategory(cat) {
+    activeCategory = cat.key;
+    renderCategoryList();
+    selected.clear();
+    items = [];
+    $("#item-grid").empty();
+    $("#load-status").text("加载中...");
+    try {
+        const resp = await fetch(cat.url);
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const data = await resp.json();
+        for (const key in data.items) {
+            const it = data.items[key];
+            items.push({ _key: key, name: it.name, lower: it.name.toLowerCase(), chaosValue: it.chaosValue, image: it.image });
+        }
+        items.sort((a, b) => b.chaosValue - a.chaosValue);
+        buildSubstrings();
+        renderTable();
+        updateRegex();
+        $("#load-status").text("");
+    } catch (err) {
+        $("#load-status").text("加载失败: " + err.message);
+    }
+}
+
+// ---- 事件 ----
+
+$(function () {
+    renderCategoryList();
+
+    $("#sidebar-toggle").on("click", function () {
+        $("#sidebar").addClass("collapsed");
+        $("#sidebar-expand").show();
+    });
+
+    $("#sidebar-expand").on("click", function () {
+        $("#sidebar").removeClass("collapsed");
+        $(this).hide();
+    });
+
+    $(document).on("click", "#cat-list .list-group-item", function () {
+        const key = $(this).data("cat");
+        if (key === activeCategory) return;
+        const cat = CATEGORIES.find(c => c.key === key);
+        if (cat) loadCategory(cat);
+    });
+
+    $(document).on("click", "#item-grid .grid-cell", function () {
+        const key = $(this).data("key");
+        if (selected.has(key)) {
+            selected.delete(key);
+            $(this).removeClass("selected");
+        } else {
+            selected.add(key);
+            $(this).addClass("selected");
+        }
+        updateRegex();
+    });
+
+    $("#range-select").on("click", function () {
+        const min = parseFloat($("#range-min").val());
+        const max = parseFloat($("#range-max").val());
+        for (const item of items) {
+            if (!isNaN(min) && item.chaosValue < min) continue;
+            if (!isNaN(max) && item.chaosValue > max) continue;
+            selected.add(item._key);
+        }
+        renderTable();
+        updateRegex();
+    });
+
+    $("#range-clear").on("click", function () {
+        selected.clear();
+        renderTable();
+        updateRegex();
+    });
+
+    $("#copy-btn").on("click", function () {
+        const text = $("#regex-output").val();
+        if (!text) return;
+        const btn = this;
+        const done = function () {
+            const orig = $(btn).text();
+            $(btn).text("已复制 ✓").prop("disabled", true);
+            setTimeout(function () { $(btn).text(orig).prop("disabled", false); }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, function () {
+                fallbackCopy(text);
+                done();
+            });
+        } else {
+            fallbackCopy(text);
+            done();
+        }
+    });
+
+    function fallbackCopy(text) {
+        const ta = document.getElementById("regex-output");
+        ta.removeAttribute("readonly");
+        ta.value = text;
+        ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        ta.setAttribute("readonly", "");
+        window.getSelection().removeAllRanges();
+    }
+
+    loadCategory(CATEGORIES[0]);
+});
+</script>
+</body>
+</html>
